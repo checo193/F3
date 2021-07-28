@@ -1,11 +1,12 @@
 import './App.css';
 import Squad from './containers/Squad';
+import Header from './components/Header'
 
 function App() {
   return (
     <div className='App'>
       <div className='header'>
-        <h1>F3</h1>
+        <Header/>
       </div>
       <div>
         <Squad/>
