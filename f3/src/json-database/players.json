@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Jordan",
+    "games": 3,
+    "wins": 2,
+    "losses": 1,
+    "goals": 21,
+    "motms": 2,
+    "teamGoals": 31,
+    "goalsConceded": 21
+  }, 
+  {
+    "name": "Dan",
+    "games": 3,
+    "wins": 3,
+    "losses": 0,
+    "goals": 0,
+    "motms": 1,
+    "teamGoals": 34,
+    "goalsConceded": 18
+  },
+  {
+    "name": "Lee",
+    "games": 3,
+    "wins": 2,
+    "losses": 1,
+    "goals": 12,
+    "motms": 0,
+    "teamGoals": 29,
+    "goalsConceded": 23
+  },
+  {
+    "name": "Luke",
+    "games": 3,
+    "wins": 0,
+    "losses": 3,
+    "goals": 4,
+    "motms": 0,
+    "teamGoals": 18,
+    "goalsConceded": 34
+  },
+  {
+    "name": "Aaron",
+    "games": 3,
+    "wins": 2,
+    "losses": 1,
+    "goals": 10,
+    "motms": 0,
+    "teamGoals": 26,
+    "goalsConceded": 26
+  },
+  {
+    "name": "Ashley",
+    "games": 3,
+    "wins": 0,
+    "losses": 3,
+    "goals": 4,
+    "motms": 0,
+    "teamGoals": 18,
+    "goalsConceded": 34
+  }
+]
