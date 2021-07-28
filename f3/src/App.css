@@ -7,3 +7,19 @@
   display: flex;
   justify-content: center;
 }
+
+.squad {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+}
+
+.squadList {
+  display: flex;
+  justify-content: space-between;
+}
+
+.squadContainer {
+  display: flex;
+  justify-content:center
+}
