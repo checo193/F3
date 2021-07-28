@@ -15,7 +15,6 @@ export default function Squad() {
     <>
       <div className='squadContainer'>
         <div className='squad'>
-          <h3 className='squadTitle'>Squad</h3>
           <div className='squadList'>{displaySquad()}</div>
         </div>
       </div>
