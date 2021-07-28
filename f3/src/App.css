@@ -1,6 +1,4 @@
-
 .App {
-
 }
 
 .header {
@@ -12,14 +10,51 @@
   display: flex;
   flex-direction: column;
   width: 80vw;
+  overflow: scroll;
+  max-width: 80vw;
 }
 
 .squadList {
   display: flex;
   justify-content: space-between;
+  overflow: scroll;
+  max-width: 100vw;
 }
 
 .squadContainer {
   display: flex;
-  justify-content:center
+  justify-content: center;
+}
+
+.player {
+  background-image: url('https://cdn.shopify.com/s/files/1/0276/5635/5926/products/WhatsAppImage2020-10-05at20.05.25_2_540x.jpg?v=1602092361');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  height: 40vh;
+  width: 40vw;
+}
+
+.playerStats {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items:flex-end;
+  padding-bottom: 6.5vh
+}
+
+.playerStats1 {
+  margin-right: 20px;
+}
+
+.stat {
+  margin-top: 0;
+  margin-bottom:1.5em
+}
+
+.playerName {
+  display: flex;
+  justify-content: center;
+  padding-top: 2em
 }
