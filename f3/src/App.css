@@ -1,5 +1,4 @@
 .App {
-
 }
 
 .header {
@@ -11,15 +10,14 @@
   display: flex;
   flex-direction: column;
   width: 80vw;
-  overflow: auto;
   max-width: 80vw;
 }
 
 .squadList {
   display: flex;
   justify-content: space-between;
-  overflow: auto;
   max-width: 100vw;
+  flex-wrap: wrap;
 }
 
 .squadContainer {
@@ -33,16 +31,16 @@
   background-size: 100% 100%;
   display: flex;
   flex-direction: column;
-  height: 40vh;
-  width: 40vw;
+  height: 400px;
+  min-width: 270px;
 }
 
 .playerStats {
   display: flex;
   justify-content: center;
   height: 100vh;
-  align-items:flex-end;
-  padding-bottom: 6.5vh
+  align-items: flex-end;
+  padding-bottom: 8vh;
 }
 
 .playerStats1 {
@@ -51,18 +49,18 @@
 
 .stat {
   margin-top: 0;
-  margin-bottom:1.5vh;
+  margin-bottom: 1vh;
 }
 
 .playerName {
   display: flex;
   justify-content: center;
-  padding-top: 4vh
+  padding-top: 4vh;
 }
 
 .playerImage {
   width: auto;
-  height:14vh;
+  height: 14vh;
 }
 
 .imageContainer {
