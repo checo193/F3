@@ -1,4 +1,5 @@
 .App {
+
 }
 
 .header {
@@ -10,14 +11,14 @@
   display: flex;
   flex-direction: column;
   width: 80vw;
-  overflow: scroll;
+  overflow: auto;
   max-width: 80vw;
 }
 
 .squadList {
   display: flex;
   justify-content: space-between;
-  overflow: scroll;
+  overflow: auto;
   max-width: 100vw;
 }
 
@@ -45,16 +46,26 @@
 }
 
 .playerStats1 {
-  margin-right: 20px;
+  margin-right: 1vw;
 }
 
 .stat {
   margin-top: 0;
-  margin-bottom:1.5em
+  margin-bottom:1.5vh;
 }
 
 .playerName {
   display: flex;
   justify-content: center;
-  padding-top: 2em
+  padding-top: 4vh
+}
+
+.playerImage {
+  width: auto;
+  height:14vh;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
 }

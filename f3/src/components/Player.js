@@ -6,6 +6,9 @@ export default function Player({ player }) {
       <div className='playerName'>
         <h3>{player.name}</h3>
       </div>
+      {/* <div className='imageContainer'>
+        <img className='playerImage' src={player.url}></img>
+      </div> */}
       <div className='playerStats'>
         <div className='playerStats1'>
           <h6 className='stat'>Games: {player.games}</h6>
