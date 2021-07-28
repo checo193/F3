@@ -75,5 +75,15 @@ header {
   justify-content: center;
 }
 
+.teamsTitle {
+  display: flex;
+  justify-content: center
+}
+
+.teams {
+  display: flex;
+  justify-content: space-around;
+}
+
 
 

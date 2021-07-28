@@ -20,27 +20,27 @@ class MakePlayer {
     this.goalsConceded = goalsConceded;
   }
   goalsPerGame() {
-    return this.goals / this.games;
+    return Math.round((this.goals / this.games) * 100) / 100;
   }
 
   winsPerGame() {
-    return this.wins / this.games;
+    return Math.round((this.wins / this.games) * 100) / 100;
   }
 
   lossesPerGame() {
-    return this.losses / this.games;
+    return Math.round((this.losses / this.games) * 100) / 100;
   }
 
   motmsPerGame() {
-    return this.motms / this.games;
+    return Math.round((this.motms / this.games) * 100) / 100;
   }
 
   teamGoalsPerGame() {
-    return this.teamGoals / this.games;
+    return Math.round((this.teamGoals / this.games) * 100) / 100;
   }
 
   goalsConcededPerGame() {
-    return this.goalsConceded / this.games;
+    return Math.round((this.goalsConceded / this.games) * 100) / 100;
   }
 
   addGame() {
