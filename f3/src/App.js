@@ -3,7 +3,7 @@ import Squad from './containers/Squad';
 import Header from './components/Header';
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import Teams from './containers/Teams'
+import Teams from './containers/Teams';
 
 function App() {
   return (
@@ -12,9 +12,14 @@ function App() {
         <div>
           <Header />
         </div>
-        <div>
-          <Squad />
-        </div>
+        <Switch>
+          <Route path='/teams'>
+            <Teams />
+          </Route>
+          <Route path='/'>
+            <Squad />
+          </Route>
+        </Switch>
       </Router>
     </div>
   );
