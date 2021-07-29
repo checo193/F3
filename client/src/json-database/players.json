@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "name": "Dan",
     "games": 3,
     "wins": 3,
@@ -12,6 +13,7 @@
   
   },
   {
+    "id": 2,
     "name": "Jordan",
     "games": 3,
     "wins": 2,
@@ -23,6 +25,7 @@
     "url": "https://images.generated.photos/W3lBHlZJKg66rxGK6BHV4Ft2pfQ_wQiK2UGv1ikS6bQ/rs:fit:512:512/wm:0.95:sowe:18:18:0.33/Z3M6Ly9nZW5lcmF0/ZWQtcGhvdG9zLWNv/bmRpdGlvbmFsLzhi/NWFlZDhiLWEyOTQt/NDI1Yy04ZDkyLTlh/NWZlNzQ5ZGI0ZC5q/cGc.jpg"
   }, 
   {
+    "id": 3,
     "name": "Lee",
     "games": 3,
     "wins": 2,
@@ -35,6 +38,7 @@
     
   },
   {
+    "id": 4,
     "name": "Luke",
     "games": 3,
     "wins": 0,
@@ -47,6 +51,7 @@
 
   },
   {
+    "id": 5,
     "name": "Aaron",
     "games": 3,
     "wins": 2,
@@ -59,6 +64,7 @@
 
   },
   {
+    "id": 6,
     "name": "Ashley",
     "games": 3,
     "wins": 0,

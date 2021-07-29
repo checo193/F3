@@ -36,7 +36,6 @@ export default function Teams({ squad }) {
   // function to display teams, maps through a team and returns a Player component for each player.
   const displayTeam = (team) => {
     return team.map((player, index) => {
-      console.log('team: ', team);
       return <TeamPlayer key={index} player={player} />;
     });
   };

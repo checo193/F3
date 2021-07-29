@@ -1,5 +1,6 @@
 class MakePlayer {
   constructor(
+    id,
     name,
     games,
     wins,
@@ -23,11 +24,11 @@ class MakePlayer {
     return Math.round((this.goals / this.games) * 100) / 100;
   }
 
-  winsPerGame() {
+  winPercentage() {
     return Math.round((this.wins / this.games) * 100) / 100;
   }
 
-  lossesPerGame() {
+  lossPercentage() {
     return Math.round((this.losses / this.games) * 100) / 100;
   }
 
@@ -58,9 +59,9 @@ class MakePlayer {
   calculateRating() {
     let rating =
       this.goalsPerGame() +
-      this.winsPerGame() +
+      this.winPercentage() +
       this.motmsPerGame() * 3 -
-      this.lossesPerGame() +
+      this.lossPercentage() +
       this.teamGoalsPerGame() * 0.5 -
       this.goalsConcededPerGame() * 0.5;
 

@@ -11,7 +11,7 @@ export default function Header() {
       </Link>
       <div className='btnContainer'>
         <Link to={'/teams'}>
-          <button className='createTeamBtn'>Create Team</button>
+          <button className='createTeamBtn'>Create Teams</button>
         </Link>
       </div>
     </header>

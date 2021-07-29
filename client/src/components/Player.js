@@ -1,14 +1,14 @@
 import React from 'react';
 
-export default function Player({ player }) {
+export default function Player({ player, handleClick }) {
   return (
-    <div className='player'>
+    <div className='player' onClick={() => {handleClick(player)}}>
       <div className='playerName'>
         <h3>{player.name}</h3>
       </div>
-      {/* <div className='imageContainer'>
+      <div className='imageContainer'>
         <img className='playerImage' src={player.url}></img>
-      </div> */}
+      </div>
       <div className='playerStats'>
         <div className='playerStats1'>
           <h6 className='stat'>Games: {player.games}</h6>
