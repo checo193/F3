@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import TeamPlayer from '../components/TeamPlayer';
+import GameForm from '../components/GameForm';
 
 export default function Teams({ squad }) {
   const [team1, setTeam1] = useState([]);
@@ -63,6 +64,9 @@ export default function Teams({ squad }) {
           </div>
           <div>{displayTeam(team2)}</div>
         </div>
+      </div>
+      <div>
+        <GameForm team1={team1} team2={team2}/>
       </div>
     </>
   );
