@@ -7,7 +7,6 @@ import Teams from './containers/Teams';
 import json from './json-database/players.json';
 import MakePlayer from './helper-functions/makePlayerObject';
 import PlayingSquad from './containers/PlayingSquad';
-import { set } from 'mongoose';
 
 // Adds required methods to player objects.
 const squadWithMethods = json.map((player) => {

@@ -52,11 +52,15 @@ export default function Teams({ squad }) {
       </div>
       <div className='teams'>
         <div className='team'>
-          <h1>Team 1</h1>
+          <div className='teamTitleContainer'>
+            <h1 className='title'>Team 1</h1>
+          </div>
           <div>{displayTeam(team1)}</div>
         </div>
         <div className='team'>
-          <h1>Team 2</h1>
+          <div className='teamTitleContainer'>
+            <h1 className='title'>Team 2</h1>
+          </div>
           <div>{displayTeam(team2)}</div>
         </div>
       </div>

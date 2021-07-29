@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #398f00;
+  background-image: url('https://www.transparenttextures.com/patterns/football-no-lines.png');
 }
 
 code {

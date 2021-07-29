@@ -13,7 +13,8 @@ export default function Squad({ squad, handleClick }) {
 
   return (
     <>
-      <h3>Squad</h3>
+      <h3 className="title">Squad</h3>
+      
       <div className='squadContainer'>
         <div className='squad'>
           <div className='squadList'>{displaySquad()}</div>
