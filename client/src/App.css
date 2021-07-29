@@ -168,4 +168,13 @@ button:Hover {
   padding: 10px
 }
 
+.playerForm {
+  display: flex;
+  flex-direction:column;
+}
+
+.playerFormLabel {
+  margin: 10px
+}
+
 

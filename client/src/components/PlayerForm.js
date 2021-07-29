@@ -2,7 +2,6 @@ import React from 'react';
 
 export default function PlayerForm({ player }) {
   let value = 0;
-  let motm = false;
 
   function updateValue(e) {
     const goals = Number(e.target.value);
@@ -14,21 +13,19 @@ export default function PlayerForm({ player }) {
   }
 
   return (
-    <div className='playerForm'>
+    <div className='playerFormContainer'>
       <form
+        className='playerForm'
         onSubmit={(e) => {
           e.preventDefault();
           player.addGoal(value);
-          // if (motm === true) {
-          //   player.addMotm();
-          // }
         }}
       >
-        <label>
+        <label className='playerFormLabel'>
           Goals
           <input onChange={updateValue} />
         </label>
-        <label>
+        <label className='playerFormLabel'>
           MOTM
           <input type='checkbox' onChange={updateMotm} />
         </label>
