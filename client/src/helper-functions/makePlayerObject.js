@@ -10,6 +10,7 @@ class MakePlayer {
     teamGoals,
     goalsConceded
   ) {
+    this.id = id;
     this.name = name;
     this.games = games;
     this.goals = goals;

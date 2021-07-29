@@ -47,7 +47,7 @@ function App() {
     let index = 0;
 
     for (let member of playingSquad) {
-      if (member.name === player.name) {
+      if (member.id === player.id) {
         inList = true;
         index = playingSquad.indexOf(member);
       }

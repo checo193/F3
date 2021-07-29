@@ -16,7 +16,7 @@ header {
 
 .squadList {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   max-width: 100vw;
   flex-wrap: wrap;
 }
