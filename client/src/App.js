@@ -19,7 +19,7 @@ const squadWithMethods = json.map((player) => {
     player.goals,
     player.motms,
     player.teamGoals,
-    player.goals
+    player.goalsConceded
   );
 });
 

@@ -57,6 +57,18 @@ class MakePlayer {
     this.wins++;
   }
 
+  addTeamGoals(num) {
+    this.teamGoals = this.teamGoals + num;
+  }
+
+  addGoalsConceded(num) {
+    this.goalsConceded = this.goalsConceded + num;
+  }
+
+  addMotm() {
+    this.motms = this.motms + 1;
+  }
+
   calculateRating() {
     let rating =
       this.goalsPerGame() +

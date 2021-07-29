@@ -2,7 +2,12 @@ import React from 'react';
 
 export default function Player({ player, handleClick }) {
   return (
-    <div className='player' onClick={() => {handleClick(player)}}>
+    <div
+      className='player'
+      onClick={() => {
+        handleClick(player);
+      }}
+    >
       <div className='playerName'>
         <h3>{player.name}</h3>
       </div>
@@ -18,6 +23,8 @@ export default function Player({ player, handleClick }) {
         <div className='playerStats2'>
           <h6 className='stat'>Motms: {player.motms}</h6>
           <h6 className='stat'>Goals: {player.goals}</h6>
+          {/* <h6 className='stat'>TGS: {player.teamGoals}</h6>
+          <h6 className='stat'>TGC: {player.goalsConceded}</h6> */}
           <h6 className='stat'>GPG: {player.goalsPerGame()}</h6>
         </div>
       </div>
