@@ -1,12 +1,14 @@
 import './App.css';
 import Squad from './containers/Squad';
 import Header from './components/Header';
-import React, { useState }from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Teams from './containers/Teams';
-import json from './json-database/players.json'
-import MakePlayer from './helper-functions/makePlayerObject'
+import json from './json-database/players.json';
+import MakePlayer from './helper-functions/makePlayerObject';
 
+
+// Adds required methods to player objects.
 const squadWithMethods = json.map((player) => {
   return new MakePlayer(
     player.name,
@@ -21,8 +23,21 @@ const squadWithMethods = json.map((player) => {
 });
 
 function App() {
-
   const [squad, setSquad] = useState(squadWithMethods);
+  const [orderedSquad, setOrderedSquad] = useState([]);
+
+
+  // Function to sort a squad in descending order of player rating.
+  const playersByRating = (squad) => {
+    const newSquad = [...squad];
+    return newSquad.sort((currentPlayer, nextPlayer) => {
+      return nextPlayer.calculateRating() - currentPlayer.calculateRating();
+    });
+  };
+
+  useEffect(() => {
+    setOrderedSquad(playersByRating(squad));
+  }, []);
 
   return (
     <div className='App'>
@@ -32,10 +47,10 @@ function App() {
         </div>
         <Switch>
           <Route path='/teams'>
-            <Teams squad={squad}/>
+            <Teams squad={orderedSquad} />
           </Route>
           <Route path='/'>
-            <Squad squad={squad}/>
+            <Squad squad={squad} />
           </Route>
         </Switch>
       </Router>

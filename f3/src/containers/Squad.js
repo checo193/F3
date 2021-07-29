@@ -1,14 +1,12 @@
 import React from 'react';
 import Player from '../components/Player';
 
+export default function Squad({ squad }) {
 
-
-
-export default function Squad({squad}) {
-
+  // display all the players in the squad, loops through squad, returning a player component for each player.
   const displaySquad = () => {
-    return squad.map((player) => {
-      return <Player player={player} />;
+    return squad.map((player, index) => {
+      return <Player key={index} player={player} />;
     });
   };
 
