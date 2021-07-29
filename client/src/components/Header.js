@@ -6,7 +6,7 @@ export default function Header() {
     <header>
       <Link to={'/'}>
         <div>
-          <h1>F3</h1>
+          <h1 className='mainTitle'>F3</h1>
         </div>
       </Link>
       <div className='btnContainer'>

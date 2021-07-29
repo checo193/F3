@@ -7,6 +7,10 @@ header {
   justify-content: space-around;
 }
 
+.mainTitle {
+  color: white
+}
+
 .squad {
   display: flex;
   flex-direction: column;
@@ -46,7 +50,7 @@ header {
   justify-content: center;
   height: 100vh;
   align-items: flex-end;
-  padding-bottom: 8vh;
+  padding-bottom: 4.5vh;
 }
 
 .playerStats1 {
@@ -55,7 +59,8 @@ header {
 
 .stat {
   margin-top: 0;
-  margin-bottom: 1vh;
+  margin-bottom: 0;
+  padding: 1em
 }
 
 .playerName {
@@ -118,6 +123,14 @@ header {
 .teamTitleContainer {
   display: flex;
   justify-content: center;
+}
+
+.playerAndForm {
+  display: flex;
+}
+
+label {
+  color: white;
 }
 
 
