@@ -13,15 +13,16 @@ header {
 .squad {
   display: flex;
   flex-direction: column;
-  width: 80vw;
-  max-width: 80vw;
+  /* width: 80vw; */
+  /* max-width: 80vw; */
 }
 
 .squadList {
   display: flex;
   /* justify-content: space-between; */
   max-width: 100vw;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
+  overflow: scroll;
 }
 
 .squadContainer {
@@ -98,8 +99,8 @@ header {
 .playingSquad {
   display: flex;
   flex-direction: column;
-  width: 80vw;
-  max-width: 80vw;
+  /* width: 80vw;
+  max-width: 80vw; */
 }
 
 .playingSquadList {
@@ -151,3 +152,10 @@ label {
   border: solid white;
   border-radius: 10px;
 }
+
+button:Hover {
+  background-color:green;
+  color: white
+}
+
+

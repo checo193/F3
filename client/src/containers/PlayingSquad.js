@@ -11,7 +11,7 @@ export default function PlayingSquad({ squad, handleClick }) {
   };
   return (
     <>
-      <h3 className='title'>Whos playing</h3>
+      {/* <h3 className='title'>Whos playing</h3> */}
       <div className='playingSquadContainer'>
         <div className='playingSquad'>
           <div className='playingSquadList'>{displayPlayingSquad()}</div>

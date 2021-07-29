@@ -13,17 +13,29 @@ export default function GameForm({ team1, team2 }) {
     });
   };
   return (
-    <div className='gameForm'>
-      <Link to={'/'}>
-        <button
-          className='submitButton'
-          onClick={() => {
-            handleClick();
-          }}
-        >
-          Submit Game
-        </button>
-      </Link>
-    </div>
+    <>
+      <div className='teamGoalsForm'>
+        <form>
+          <label>
+            Team 1 Goals: <input></input>
+          </label>
+          <label>
+            Team 2 Goals: <input></input>
+          </label>
+        </form>
+      </div>
+      <div className='gameForm'>
+        <Link to={'/'}>
+          <button
+            className='submitButton'
+            onClick={() => {
+              handleClick();
+            }}
+          >
+            Submit Game
+          </button>
+        </Link>
+      </div>
+    </>
   );
 }

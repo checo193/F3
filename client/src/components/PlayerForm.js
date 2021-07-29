@@ -1,21 +1,24 @@
 import React from 'react';
 
 export default function PlayerForm({ player }) {
-  
-  function updateGoals(e) {
+  let value = 0;
+
+  function updateValue(e) {
     const goals = Number(e.target.value);
-    player.addGoal(goals);
+    value = goals;
   }
+
   return (
     <div className='playerForm'>
       <form
         onSubmit={(e) => {
           e.preventDefault();
+          player.addGoal(value);
         }}
       >
         <label>
           Goals
-          <input onChange={updateGoals} />
+          <input onChange={updateValue} />
         </label>
       </form>
     </div>
