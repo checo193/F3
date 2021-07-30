@@ -36,18 +36,13 @@ function App() {
     });
   };
 
-  // useEffect(() => {
-  //   setOrderedSquad(playersByRating(playingSquad));
-  //   console.log();
-  // }, [playingSquad]);
-
+  // When user clicks 'create teams' button, arranged the selected squad in order of skill rating.
   const orderSquad = () => {
     setOrderedSquad(playersByRating(playingSquad));
-    console.log(orderedSquad);
   };
 
+  // Either adds or removes players to the 'playingSquad' depending on if they are already included or not.
   const handleClick = (player) => {
-    console.log(player.calculateRating())
     let inList = false;
     let index = 0;
 
@@ -57,7 +52,6 @@ function App() {
         index = playingSquad.indexOf(member);
       }
     }
-
     if (inList === false) {
       setPlayingSquad((prevState) => [...prevState, player]);
       const tempSquad = squad;
@@ -71,8 +65,6 @@ function App() {
       setPlayingSquad(arr);
       setSquad((prevState) => [...prevState, player]);
     }
-    // console.log(`clicked ${player.id}`);
-    // setPlayingSquad((prevState) => [...prevState, player]);
   };
 
   return (
