@@ -47,7 +47,7 @@ function App() {
   };
 
   const handleClick = (player) => {
-    console.log(player.teamGoalsPerGame())
+    console.log(player.calculateRating())
     let inList = false;
     let index = 0;
 
