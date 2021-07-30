@@ -1,11 +1,14 @@
 import React from 'react';
 
-export default function PlayerForm({ player }) {
-  let value = 0;
+// form to update goals and motms stat.
 
-  function updateValue(e) {
-    const goals = Number(e.target.value);
-    value = goals;
+export default function PlayerForm({ player }) {
+
+
+  let addedGoals = 0;
+  function updateGoals(e) {
+    const goals = Number(e.target.addedGoals);
+    addedGoals = goals;
   }
 
   function updateMotm() {
@@ -18,12 +21,12 @@ export default function PlayerForm({ player }) {
         className='playerForm'
         onSubmit={(e) => {
           e.preventDefault();
-          player.addGoal(value);
+          player.addGoal(addedGoals);
         }}
       >
         <label className='playerFormLabel'>
           Goals
-          <input onChange={updateValue} />
+          <input onChange={updateGoals} />
         </label>
         <label className='playerFormLabel'>
           MOTM

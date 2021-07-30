@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+//form to update goalsConceded, teamGoals, game, wins, losses.
+
 export default function GameForm({ team1, team2 }) {
+
   let team1goals = 0;
   let team2goals = 0;
 

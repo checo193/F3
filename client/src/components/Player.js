@@ -5,15 +5,13 @@ export default function Player({ player, handleClick }) {
     <div
       className='player'
       onClick={() => {
+        // adds or removes players from playing squad.
         handleClick(player);
       }}
     >
       <div className='playerName'>
         <h3>{player.name}</h3>
       </div>
-      {/* <div className='imageContainer'>
-        <img className='playerImage' src={player.url}></img>
-      </div> */}
       <div className='playerStats'>
         <div className='playerStats1'>
           <h6 className='stat'>Games: {player.games}</h6>
@@ -23,9 +21,6 @@ export default function Player({ player, handleClick }) {
         <div className='playerStats2'>
           <h6 className='stat'>Motms: {player.motms}</h6>
           <h6 className='stat'>Goals: {player.goals}</h6>
-          {/* <h6 className='stat'>TGS: {player.teamGoals}</h6>
-          <h6 className='stat'>TGC: {player.goalsConceded}</h6> */}
-          {/* <h6 className='stat'>PlayerRating: {player.calculateRating()}</h6> */}
           <h6 className='stat'>GPG: {player.goalsPerGame()}</h6>
         </div>
       </div>
