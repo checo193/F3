@@ -82,6 +82,8 @@ class MakePlayer {
       this.teamGoalsPerGame() * 0.5 -
       this.goalsConcededPerGame() * 0.5;
 
+    rating = Math.round(rating * 100) / 100;
+
     this.rating = rating;
     return rating;
   }

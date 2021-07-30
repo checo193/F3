@@ -36,12 +36,18 @@ function App() {
     });
   };
 
-  useEffect(() => {
+  // useEffect(() => {
+  //   setOrderedSquad(playersByRating(playingSquad));
+  //   console.log();
+  // }, [playingSquad]);
+
+  const orderSquad = () => {
     setOrderedSquad(playersByRating(playingSquad));
-    console.log();
-  }, [playingSquad]);
+    console.log(orderedSquad);
+  };
 
   const handleClick = (player) => {
+    console.log(player.teamGoalsPerGame())
     let inList = false;
     let index = 0;
 
@@ -73,7 +79,7 @@ function App() {
     <div className='App'>
       <Router>
         <div>
-          <Header />
+          <Header orderSquad={orderSquad} />
         </div>
         <Switch>
           <Route path='/teams'>

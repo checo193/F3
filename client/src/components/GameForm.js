@@ -6,8 +6,6 @@ export default function GameForm({ team1, team2 }) {
   let team2goals = 0;
 
   const handleClick = () => {
-    console.log('team1: ', team1);
-    console.log('team2: ', team2);
     team1.forEach((player) => {
       player.addGame();
     });

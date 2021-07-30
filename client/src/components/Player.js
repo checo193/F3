@@ -25,7 +25,8 @@ export default function Player({ player, handleClick }) {
           <h6 className='stat'>Goals: {player.goals}</h6>
           {/* <h6 className='stat'>TGS: {player.teamGoals}</h6>
           <h6 className='stat'>TGC: {player.goalsConceded}</h6> */}
-          <h6 className='stat'>GPG: {player.goalsPerGame()}</h6>
+          <h6 className='stat'>PlayerRating: {player.calculateRating()}</h6>
+          {/* <h6 className='stat'>GPG: {player.goalsPerGame()}</h6> */}
         </div>
       </div>
     </div>
