@@ -1,32 +1,39 @@
 import './App.css';
 import Squad from './containers/Squad';
 import Header from './components/Header';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Teams from './containers/Teams';
 import json from './json-database/players.json';
 import MakePlayer from './helper-functions/makePlayerObject';
 import PlayingSquad from './containers/PlayingSquad';
 
-// Adds required methods to player objects.
-const squadWithMethods = json.map((player) => {
-  return new MakePlayer(
-    player.id,
-    player.name,
-    player.games,
-    player.wins,
-    player.losses,
-    player.goals,
-    player.motms,
-    player.teamGoals,
-    player.goalsConceded
-  );
-});
 
 function App() {
-  const [squad, setSquad] = useState(squadWithMethods);
+  const [squad, setSquad] = useState([]);
   const [orderedSquad, setOrderedSquad] = useState([]);
   const [playingSquad, setPlayingSquad] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/squad').then((response) => {
+      return response.json().then((data) => {
+        console.log(data);
+        setSquad(data.map((player) => {
+            return new MakePlayer(
+              player.id,
+              player.name,
+              player.games,
+              player.wins,
+              player.losses,
+              player.goals,
+              player.motms,
+              player.teamGoals,
+              player.goalsConceded
+            );
+        }));
+      })
+    })
+  }, [])
 
   // Function to sort a squad in descending order of player rating.
   const playersByRating = (squad) => {
