@@ -3,11 +3,9 @@ import React from 'react';
 // form to update goals and motms stat.
 
 export default function PlayerForm({ player }) {
-
-
   let addedGoals = 0;
   function updateGoals(e) {
-    const goals = Number(e.target.addedGoals);
+    const goals = Number(e.target.value);
     addedGoals = goals;
   }
 
