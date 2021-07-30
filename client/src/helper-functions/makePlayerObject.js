@@ -57,6 +57,10 @@ class MakePlayer {
     this.wins++;
   }
 
+  addLoss() {
+    this.losses++;
+  }
+
   addTeamGoals(num) {
     this.teamGoals = this.teamGoals + num;
   }

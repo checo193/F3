@@ -14,31 +14,48 @@ export default function GameForm({ team1, team2 }) {
     team2.forEach((player) => {
       player.addGame();
     });
+    if (team1goals > team2goals) {
+      team1.forEach((player) => {
+        player.addWin();
+      });
+      team2.forEach((player) => {
+        player.addLoss();
+      });
+    } else if (team1goals < team2goals) {
+      team2.forEach((player) => {
+        player.addWin();
+      });
+      team1.forEach((player) => {
+        player.addLoss();
+      });
+    }
+    team1.forEach((player) => {
+      player.addTeamGoals(team1goals);
+      player.addGoalsConceded(team2goals);
+    });
+    team2.forEach((player) => {
+      player.addTeamGoals(team2goals);
+      player.addGoalsConceded(team1goals);
+    });
   };
 
-  function updateTeam1Goals (e) {
+  function updateTeam1Goals(e) {
     const teamGoals = Number(e.target.value);
     team1goals = teamGoals;
   }
 
-  function updateTeam2Goals (e) {
+  function updateTeam2Goals(e) {
     const goalsConceded = Number(e.target.value);
     team2goals = goalsConceded;
   }
   return (
     <>
       <div className='teamGoalsForm'>
-        <form onSubmit={(e) => {
-          e.preventDefault();
-          team1.forEach((player) => {
-            player.addTeamGoals(team1goals);
-            player.addGoalsConceded(team2goals);
-          })
-          team2.forEach((player) => {
-            player.addTeamGoals(team2goals)
-            player.addGoalsConceded(team1goals)
-          })
-        }}>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}
+        >
           <label className='team1GoalForm'>
             Team 1 Goals: <input onChange={updateTeam1Goals}></input>
           </label>
