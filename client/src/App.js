@@ -8,7 +8,6 @@ import json from './json-database/players.json';
 import MakePlayer from './helper-functions/makePlayerObject';
 import PlayingSquad from './containers/PlayingSquad';
 
-
 function App() {
   const [squad, setSquad] = useState([]);
   const [orderedSquad, setOrderedSquad] = useState([]);
@@ -17,8 +16,8 @@ function App() {
   useEffect(() => {
     fetch('http://localhost:3000/squad').then((response) => {
       return response.json().then((data) => {
-        console.log(data);
-        setSquad(data.map((player) => {
+        setSquad(
+          data.map((player) => {
             return new MakePlayer(
               player.id,
               player.name,
@@ -30,10 +29,11 @@ function App() {
               player.teamGoals,
               player.goalsConceded
             );
-        }));
-      })
-    })
-  }, [])
+          })
+        );
+      });
+    });
+  }, []);
 
   // Function to sort a squad in descending order of player rating.
   const playersByRating = (squad) => {
@@ -74,6 +74,19 @@ function App() {
     }
   };
 
+  function updateStats(player, newGoals) {
+    console.log(player.id);
+      fetch(`http://localhost:3000/squad/${player.id}`, {
+        method: 'PUT',
+        body: JSON.stringify({goals: newGoals}),
+        headers: { 'Content-Type': 'application/json' },
+      }).then((response) => {
+        return response.json().then((data) => {
+          setSquad(data);
+        });
+      });
+  }
+
   return (
     <div className='App'>
       <Router>
@@ -82,7 +95,7 @@ function App() {
         </div>
         <Switch>
           <Route path='/teams'>
-            <Teams squad={orderedSquad} />
+            <Teams updateStats={updateStats} squad={squad} playingSquad={playingSquad} />
           </Route>
           <Route path='/'>
             <PlayingSquad squad={playingSquad} handleClick={handleClick} />

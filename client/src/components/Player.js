@@ -21,7 +21,7 @@ export default function Player({ player, handleClick }) {
         <div className='playerStats2'>
           <h6 className='stat'>Motms: {player.motms}</h6>
           <h6 className='stat'>Goals: {player.goals}</h6>
-          <h6 className='stat'>GPG: {player.goalsPerGame()}</h6>
+          {/* <h6 className='stat'>GPG: {player.goalsPerGame()}</h6> */}
         </div>
       </div>
     </div>
