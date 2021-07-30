@@ -1,7 +1,7 @@
 import './App.css';
 import Squad from './containers/Squad';
 import Header from './components/Header';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Teams from './containers/Teams';
 import json from './json-database/players.json';
