@@ -77,11 +77,11 @@ function App() {
     }
   };
 
-  function updateStats(player, newGoals) {
+  function updatePlayerStats(player, newGoals, newMotms) {
     console.log(player.id);
       fetch(`http://localhost:3000/squad/${player.id}`, {
         method: 'PUT',
-        body: JSON.stringify({goals: newGoals}),
+        body: JSON.stringify({goals: newGoals, motms: newMotms}),
         headers: { 'Content-Type': 'application/json' },
       }).then((response) => {
         return response.json().then((data) => {
@@ -98,7 +98,7 @@ function App() {
         </div>
         <Switch>
           <Route path='/teams'>
-            <Teams updateStats={updateStats} squad={orderedSquad} />
+            <Teams updatePlayerStats={updatePlayerStats} squad={orderedSquad} />
           </Route>
           <Route path='/'>
             <PlayingSquad squad={playingSquad} handleClick={handleClick} />

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import TeamPlayer from '../components/TeamPlayer';
 import GameForm from '../components/GameForm';
 
-export default function Teams({ squad, updateStats }) {
+export default function Teams({ squad, updatePlayerStats }) {
   const [team1, setTeam1] = useState([]);
   const [team2, setTeam2] = useState([]);
   // const [orderedSquad, setOrderedSquad] = useState([]);
@@ -37,7 +37,7 @@ export default function Teams({ squad, updateStats }) {
   // function to display teams, maps through a team and returns a Player component for each player.
   const displayTeam = (team) => {
     return team.map((player, index) => {
-      return <TeamPlayer updateStats={updateStats} key={index} player={player} />;
+      return <TeamPlayer updatePlayerStats={updatePlayerStats} key={index} player={player} />;
     });
   };
 

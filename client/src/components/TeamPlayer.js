@@ -1,7 +1,7 @@
 import React from 'react';
 import PlayerForm from './PlayerForm';
 
-export default function TeamPlayer({ player, updateStats }) {
+export default function TeamPlayer({ player, updatePlayerStats }) {
   return (
     <>
       <div className='playerAndForm'>
@@ -25,7 +25,7 @@ export default function TeamPlayer({ player, updateStats }) {
             </div>
           </div>
         </div>
-        <PlayerForm updateStats={updateStats} player={player}/>
+        <PlayerForm updatePlayerStats={updatePlayerStats} player={player} />
       </div>
     </>
   );
