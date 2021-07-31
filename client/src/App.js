@@ -90,10 +90,10 @@ function App() {
     });
   }
 
-  function updateGameStats(player) {
-    fetch(`http://localhost:3000/sqaud/${player.id}`, {
+  function updateGameStats(player, newGames) {
+    fetch(`http://localhost:3000/squad/${player.id}`, {
       method: 'PUT',
-      body: JSON.stringify({}),
+      body: JSON.stringify({games: newGames}),
       headers: { 'Content-Type': 'application/json' },
     }).then((response) => {
       return response.json().then((data) => {
@@ -110,7 +110,7 @@ function App() {
         </div>
         <Switch>
           <Route path='/teams'>
-            <Teams updatePlayerStats={updatePlayerStats} squad={orderedSquad} />
+            <Teams updateGameStats={updateGameStats} updatePlayerStats={updatePlayerStats} squad={orderedSquad} />
           </Route>
           <Route path='/'>
             <PlayingSquad squad={playingSquad} handleClick={handleClick} />
