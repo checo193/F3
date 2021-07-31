@@ -17,20 +17,20 @@ header {
   /* max-width: 80vw; */
 }
 
-.squadList {
+/* .squadList {
   display: flex;
-  /* justify-content: space-between; */
-  max-width: 100vw;
-  /* flex-wrap: wrap; */
-  overflow: scroll;
-}
 
-.squadContainer {
+  max-width: 100vw;
+
+  overflow: scroll;
+} */
+
+/* .squadContainer {
   display: flex;
   justify-content: center;
-}
+} */
 
-.player {
+/* .playerCard {
   background-image: url('https://scontent.xx.fbcdn.net/v/t1.15752-9/222193876_292896532593160_624424671877791562_n.png?_nc_cat=100&ccb=1-3&_nc_sid=aee45a&_nc_ohc=kztlqwu-NkkAX8uyQUJ&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=d303d4c00c57006360e1672bc4c4f67a&oe=6128CCE7');
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -39,35 +39,35 @@ header {
   height: 400px;
   min-width: 270px;
   margin: 2em;
-}
+} */
 
-.player:hover {
+/* .playerCard:hover {
   background-image: url('https://scontent.xx.fbcdn.net/v/t1.15752-9/226077811_931117614135776_1330883807236193151_n.png?_nc_cat=110&ccb=1-3&_nc_sid=aee45a&_nc_ohc=vpI9R1wcjSkAX-iC008&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=1443dfca95eb7847a6d7fa0fa388e281&oe=612A08AA');
-}
+} */
 
-.playerStats {
+/* .playerStats {
   display: flex;
   justify-content: center;
   height: 100vh;
   align-items: flex-end;
   padding-bottom: 4.5vh;
-}
+} */
 
-.playerStats1 {
+/* .playerStats1 {
   margin-right: 30px;
-}
+} */
 
-.stat {
+/* .stat {
   margin-top: 0;
   margin-bottom: 0;
   padding: 1em;
-}
+} */
 
-.playerName {
+/* .playerName {
   display: flex;
   justify-content: center;
   padding-top: 4vh;
-}
+} */
 
 .playerImage {
   width: auto;
@@ -175,4 +175,89 @@ button:hover {
 
 .playerFormLabel {
   margin: 10px;
+}
+
+/* .squadContainer {
+  display: flex;
+  justify-content: center;
+} */
+
+.squadList {
+  display: flex;
+  padding: 3rem;
+  overflow: scroll;
+}
+
+.cardImage {
+  height: 400px;
+  min-width: 270px;
+  position: relative;
+  filter: drop-shadow(-1rem 0 3rem #000);
+  transition: 0.2s;
+  display: flex;
+}
+
+.cardImage:hover {
+  /* transform: translateY(-1rem); */
+  /* transform: translateX(-6rem); */
+}
+
+.cardImage:hover ~ .cardImage {
+  transform: translate(130px);
+}
+
+.cardImage:not(:first-child) {
+  margin-left: -130px;
+}
+
+.playerCard {
+  height: 400px;
+  min-width: 270px;
+  transition: 0.2s;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.playerCard:hover {
+  transform: translateY(-1rem);
+}
+
+.playerCard:hover ~ .playerCard {
+  transform: translate(130px);
+}
+
+.playerCard:not(:first-child) {
+  margin-left: -130px;
+}
+
+.playerName {
+  position: absolute;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: 4vh;
+}
+
+.playerStats {
+  position: absolute;
+  display: flex;
+  height: 355px;
+  width: 270px;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.playerStats1 {
+  margin-right: 30px;
+}
+
+.playerStats2 {
+}
+
+.stat {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 1em;
 }
