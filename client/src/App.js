@@ -35,7 +35,7 @@ function App() {
         );
       });
     });
-    setPlayingSquad([])
+    setPlayingSquad([]);
   }, [url]);
 
   // Function to sort a squad in descending order of player rating.
@@ -79,15 +79,27 @@ function App() {
 
   function updatePlayerStats(player, newGoals, newMotms) {
     console.log(player.id);
-      fetch(`http://localhost:3000/squad/${player.id}`, {
-        method: 'PUT',
-        body: JSON.stringify({goals: newGoals, motms: newMotms}),
-        headers: { 'Content-Type': 'application/json' },
-      }).then((response) => {
-        return response.json().then((data) => {
-          setSquad(data);
-        });
+    fetch(`http://localhost:3000/squad/${player.id}`, {
+      method: 'PUT',
+      body: JSON.stringify({ goals: newGoals, motms: newMotms }),
+      headers: { 'Content-Type': 'application/json' },
+    }).then((response) => {
+      return response.json().then((data) => {
+        setSquad(data);
       });
+    });
+  }
+
+  function updateGameStats(player) {
+    fetch(`http://localhost:3000/sqaud/${player.id}`, {
+      method: 'PUT',
+      body: JSON.stringify({}),
+      headers: { 'Content-Type': 'application/json' },
+    }).then((response) => {
+      return response.json().then((data) => {
+        setSquad(data);
+      });
+    });
   }
 
   return (
