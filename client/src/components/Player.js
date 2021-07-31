@@ -22,7 +22,7 @@ export default function Player({ player, handleClick }) {
           <h6 className='stat'>Motms: {player.motms}</h6>
           <h6 className='stat'>Goals: {player.goals}</h6>
           <h6 className='stat'>
-            GPG: {Math.round((player.goals / player.games) * 100) / 100}
+            GPG: {(Math.round((player.goals / player.games) * 100) / 100) || 0}
           </h6>
         </div>
       </div>
