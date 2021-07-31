@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import TeamPlayer from '../components/TeamPlayer';
 import GameForm from '../components/GameForm';
 
-export default function Teams({ squad, updatePlayerStats, updateGameStats, updatePlayerWins, updatePlayerLosses }) {
+export default function Teams({ squad, updatePlayerStats, updateGameStats, updatePlayerWins, updatePlayerLosses, updateTeamGoals, updateGoalsConceded }) {
   const [team1, setTeam1] = useState([]);
   const [team2, setTeam2] = useState([]);
   // const [orderedSquad, setOrderedSquad] = useState([]);
@@ -68,7 +68,7 @@ export default function Teams({ squad, updatePlayerStats, updateGameStats, updat
         </div>
       </div>
       <div>
-        <GameForm team1={team1} team2={team2} updateGameStats={updateGameStats} updatePlayerWins={updatePlayerWins} updatePlayerLosses={updatePlayerLosses}/>
+        <GameForm team1={team1} team2={team2} updateGameStats={updateGameStats} updatePlayerWins={updatePlayerWins} updatePlayerLosses={updatePlayerLosses} updateTeamGoals={updateTeamGoals} updateGoalsConceded={updateGoalsConceded}/>
       </div>
     </>
   );

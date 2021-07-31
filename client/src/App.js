@@ -53,6 +53,7 @@ function App() {
 
   // Either adds or removes players to the 'playingSquad' depending on if they are already included or not.
   const handleClick = (player) => {
+    console.log('rating: ', player.calculateRating());
     let inList = false;
     let index = 0;
 
@@ -124,6 +125,30 @@ function App() {
     });
   }
 
+  function updateTeamGoals(player, newTeamGoals) {
+    fetch(`http://localhost:3000/squad/${player.id}`, {
+      method: 'PUT',
+      body: JSON.stringify({ teamGoals: newTeamGoals }),
+      headers: { 'Content-Type': 'application/json' },
+    }).then((response) => {
+      return response.json().then((data) => {
+        setSquad(data);
+      });
+    });
+  }
+
+  function updateGoalsConceded(player, newGoalsConceded) {
+    fetch(`http://localhost:3000/squad/${player.id}`, {
+      method: 'PUT',
+      body: JSON.stringify({ goalsConceded: newGoalsConceded }),
+      headers: { 'Content-Type': 'application/json' },
+    }).then((response) => {
+      return response.json().then((data) => {
+        setSquad(data);
+      });
+    });
+  }
+
   return (
     <div className='App'>
       <Router>
@@ -138,6 +163,8 @@ function App() {
               updatePlayerStats={updatePlayerStats}
               squad={orderedSquad}
               updatePlayerLosses={updatePlayerLosses}
+              updateTeamGoals={updateTeamGoals}
+              updateGoalsConceded={updateGoalsConceded}
             />
           </Route>
           <Route path='/'>
