@@ -4,7 +4,7 @@ import Header from './components/Header';
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Teams from './containers/Teams';
-import json from './json-database/players.json';
+// import json from './json-database/players.json';
 import MakePlayer from './helper-functions/makePlayerObject';
 import PlayingSquad from './containers/PlayingSquad';
 
@@ -12,6 +12,8 @@ function App() {
   const [squad, setSquad] = useState([]);
   const [orderedSquad, setOrderedSquad] = useState([]);
   const [playingSquad, setPlayingSquad] = useState([]);
+
+  const url = window.location.pathname.split('/').pop();
 
   useEffect(() => {
     fetch('http://localhost:3000/squad').then((response) => {
@@ -33,7 +35,8 @@ function App() {
         );
       });
     });
-  }, []);
+    setPlayingSquad([])
+  }, [url]);
 
   // Function to sort a squad in descending order of player rating.
   const playersByRating = (squad) => {
@@ -95,7 +98,7 @@ function App() {
         </div>
         <Switch>
           <Route path='/teams'>
-            <Teams updateStats={updateStats} squad={squad} playingSquad={playingSquad} />
+            <Teams updateStats={updateStats} squad={orderedSquad} />
           </Route>
           <Route path='/'>
             <PlayingSquad squad={playingSquad} handleClick={handleClick} />

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import TeamPlayer from '../components/TeamPlayer';
 import GameForm from '../components/GameForm';
 
-export default function Teams({ playingSquad, updateStats }) {
+export default function Teams({ squad, updateStats }) {
   const [team1, setTeam1] = useState([]);
   const [team2, setTeam2] = useState([]);
   // const [orderedSquad, setOrderedSquad] = useState([]);
@@ -14,18 +14,18 @@ export default function Teams({ playingSquad, updateStats }) {
   const [teams, setTeams] = useState(initialState);
   */
 
-  // Function to create teams, loops through playingSquad sorted by rating, adds first player to team 1, next to team 2, next to team 1 etc...
-  const createTeams = (playingSquad) => {
+  // Function to create teams, loops through squad sorted by rating, adds first player to team 1, next to team 2, next to team 1 etc...
+  const createTeams = (squad) => {
     const tempTeam1 = [];
     const tempTeam2 = [];
     // const tempTeams = { team1: [], team2: []}
-    for (let i = 0; i < playingSquad.length; i++) {
+    for (let i = 0; i < squad.length; i++) {
       if (i % 2 === 0) {
-        tempTeam1.push(playingSquad[i]);
-        //tempTeams.team1.push(playingSquad[i]);
+        tempTeam1.push(squad[i]);
+        //tempTeams.team1.push(squad[i]);
       } else {
-        tempTeam2.push(playingSquad[i]);
-        //tempTeams.team2.push(playingSquad[i]);
+        tempTeam2.push(squad[i]);
+        //tempTeams.team2.push(squad[i]);
       }
     }
     setTeam1((prevState) => [...prevState, ...tempTeam1]);
@@ -44,12 +44,12 @@ export default function Teams({ playingSquad, updateStats }) {
 
   // As soon as the teams page is loaded, create the teams.
   useEffect(() => {
-    createTeams(playingSquad);
+    createTeams(squad);
   }, []);
 
   return (
     <>
-      {/* {console.log(playingSquad)} */}
+      {/* {console.log(squad)} */}
       <div className='teamsTitle'>
         <h1>Teams</h1>
       </div>
