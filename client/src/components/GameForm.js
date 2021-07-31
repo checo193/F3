@@ -3,45 +3,46 @@ import { Link } from 'react-router-dom';
 
 //form to update goalsConceded, teamGoals, game, wins, losses.
 
-export default function GameForm({ team1, team2, updateGameStats, updatePlayerWins }) {
+export default function GameForm({ team1, team2, updateGameStats, updatePlayerWins, updatePlayerLosses }) {
 
   let team1goals = 0;
   let team2goals = 0;
 
   const handleClick = () => {
     team1.forEach((player) => {
-      // player.addGame();
       updateGameStats(player, player.games +1)
     });
     team2.forEach((player) => {
-      // player.addGame();
       updateGameStats(player, player.games + 1);
 
     });
     if (team1goals > team2goals) {
       team1.forEach((player) => {
-        // player.addWin();
         updatePlayerWins(player, player.wins + 1)
       });
       team2.forEach((player) => {
-        player.addLoss();
+        updatePlayerLosses(player,player.losses + 1)
       });
     } else if (team1goals < team2goals) {
       team2.forEach((player) => {
-        // player.addWin();
         updatePlayerWins(player, player.wins + 1);
       });
       team1.forEach((player) => {
-        player.addLoss();
+        updatePlayerLosses(player, player.losses + 1);
+
       });
     }
     team1.forEach((player) => {
-      player.addTeamGoals(team1goals);
-      player.addGoalsConceded(team2goals);
+      // player.addTeamGoals(team1goals);
+      updateTeamGoals(player, player.teamGoals + team1goals)
+      // player.addGoalsConceded(team2goals);
+      updateGoalsConceded(player, player.goalsConceded + team2goals)
     });
     team2.forEach((player) => {
-      player.addTeamGoals(team2goals);
-      player.addGoalsConceded(team1goals);
+      // player.addTeamGoals(team2goals);
+      updateTeamGoals(player, player.teamGoals + team2goals);
+      // player.addGoalsConceded(team1goals);
+      updateGoalsConceded(player, player.goalsConceded + team1goals);
     });
   };
 

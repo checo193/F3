@@ -93,7 +93,7 @@ function App() {
   function updateGameStats(player, newGames) {
     fetch(`http://localhost:3000/squad/${player.id}`, {
       method: 'PUT',
-      body: JSON.stringify({games: newGames}),
+      body: JSON.stringify({ games: newGames }),
       headers: { 'Content-Type': 'application/json' },
     }).then((response) => {
       return response.json().then((data) => {
@@ -101,17 +101,28 @@ function App() {
       });
     });
   }
-    function updatePlayerWins(player, newWins) {
-      fetch(`http://localhost:3000/squad/${player.id}`, {
-        method: 'PUT',
-        body: JSON.stringify({ wins: newWins }),
-        headers: { 'Content-Type': 'application/json' },
-      }).then((response) => {
-        return response.json().then((data) => {
-          setSquad(data);
-        });
+  function updatePlayerWins(player, newWins) {
+    fetch(`http://localhost:3000/squad/${player.id}`, {
+      method: 'PUT',
+      body: JSON.stringify({ wins: newWins }),
+      headers: { 'Content-Type': 'application/json' },
+    }).then((response) => {
+      return response.json().then((data) => {
+        setSquad(data);
       });
-    }
+    });
+  }
+  function updatePlayerLosses(player, newLosses) {
+    fetch(`http://localhost:3000/squad/${player.id}`, {
+      method: 'PUT',
+      body: JSON.stringify({ losses: newLosses }),
+      headers: { 'Content-Type': 'application/json' },
+    }).then((response) => {
+      return response.json().then((data) => {
+        setSquad(data);
+      });
+    });
+  }
 
   return (
     <div className='App'>
@@ -121,7 +132,13 @@ function App() {
         </div>
         <Switch>
           <Route path='/teams'>
-            <Teams updatePlayerWins={updatePlayerWins} updateGameStats={updateGameStats} updatePlayerStats={updatePlayerStats} squad={orderedSquad} />
+            <Teams
+              updatePlayerWins={updatePlayerWins}
+              updateGameStats={updateGameStats}
+              updatePlayerStats={updatePlayerStats}
+              squad={orderedSquad}
+              updatePlayerLosses={updatePlayerLosses}
+            />
           </Route>
           <Route path='/'>
             <PlayingSquad squad={playingSquad} handleClick={handleClick} />
