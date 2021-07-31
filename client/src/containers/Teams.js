@@ -2,7 +2,15 @@ import React, { useState, useEffect } from 'react';
 import TeamPlayer from '../components/TeamPlayer';
 import GameForm from '../components/GameForm';
 
-export default function Teams({ squad, updatePlayerStats, updateGameStats, updatePlayerWins, updatePlayerLosses, updateTeamGoals, updateGoalsConceded }) {
+export default function Teams({
+  squad,
+  updatePlayerStats,
+  updateGameStats,
+  updatePlayerWins,
+  updatePlayerLosses,
+  updateTeamGoals,
+  updateGoalsConceded,
+}) {
   const [team1, setTeam1] = useState([]);
   const [team2, setTeam2] = useState([]);
   // const [orderedSquad, setOrderedSquad] = useState([]);
@@ -37,10 +45,15 @@ export default function Teams({ squad, updatePlayerStats, updateGameStats, updat
   // function to display teams, maps through a team and returns a Player component for each player.
   const displayTeam = (team) => {
     return team.map((player, index) => {
-      return <TeamPlayer updatePlayerStats={updatePlayerStats} key={index} player={player} />;
+      return (
+        <TeamPlayer
+          updatePlayerStats={updatePlayerStats}
+          key={index}
+          player={player}
+        />
+      );
     });
   };
-
 
   // As soon as the teams page is loaded, create the teams.
   useEffect(() => {
@@ -49,7 +62,6 @@ export default function Teams({ squad, updatePlayerStats, updateGameStats, updat
 
   return (
     <>
-      {/* {console.log(squad)} */}
       <div className='teamsTitle'>
         <h1>Teams</h1>
       </div>
@@ -68,7 +80,15 @@ export default function Teams({ squad, updatePlayerStats, updateGameStats, updat
         </div>
       </div>
       <div>
-        <GameForm team1={team1} team2={team2} updateGameStats={updateGameStats} updatePlayerWins={updatePlayerWins} updatePlayerLosses={updatePlayerLosses} updateTeamGoals={updateTeamGoals} updateGoalsConceded={updateGoalsConceded}/>
+        <GameForm
+          team1={team1}
+          team2={team2}
+          updateGameStats={updateGameStats}
+          updatePlayerWins={updatePlayerWins}
+          updatePlayerLosses={updatePlayerLosses}
+          updateTeamGoals={updateTeamGoals}
+          updateGoalsConceded={updateGoalsConceded}
+        />
       </div>
     </>
   );

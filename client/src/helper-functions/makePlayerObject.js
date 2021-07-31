@@ -45,33 +45,36 @@ class MakePlayer {
     return Math.round((this.goalsConceded / this.games) * 100) / 100;
   }
 
-  addGame() {
-    this.games++;
-  }
 
-  addGoal(num) {
-    this.goals = this.goals + num;
-  }
+  // These methods are now no longer used.
+  
+  // addGame() {
+  //   this.games++;
+  // }
 
-  addWin() {
-    this.wins++;
-  }
+  // addGoal(num) {
+  //   this.goals = this.goals + num;
+  // }
 
-  addLoss() {
-    this.losses++;
-  }
+  // addWin() {
+  //   this.wins++;
+  // }
 
-  addTeamGoals(num) {
-    this.teamGoals = this.teamGoals + num;
-  }
+  // addLoss() {
+  //   this.losses++;
+  // }
 
-  addGoalsConceded(num) {
-    this.goalsConceded = this.goalsConceded + num;
-  }
+  // addTeamGoals(num) {
+  //   this.teamGoals = this.teamGoals + num;
+  // }
 
-  addMotm() {
-    this.motms = this.motms + 1;
-  }
+  // addGoalsConceded(num) {
+  //   this.goalsConceded = this.goalsConceded + num;
+  // }
+
+  // addMotm() {
+  //   this.motms = this.motms + 1;
+  // }
 
   calculateRating() {
     let rating =

@@ -4,7 +4,6 @@ import Header from './components/Header';
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Teams from './containers/Teams';
-// import json from './json-database/players.json';
 import MakePlayer from './helper-functions/makePlayerObject';
 import PlayingSquad from './containers/PlayingSquad';
 
@@ -53,7 +52,6 @@ function App() {
 
   // Either adds or removes players to the 'playingSquad' depending on if they are already included or not.
   const handleClick = (player) => {
-    console.log('rating: ', player.calculateRating());
     let inList = false;
     let index = 0;
 
@@ -77,6 +75,8 @@ function App() {
       setSquad((prevState) => [...prevState, player]);
     }
   };
+
+  // Functions to update all the players stats after a game and reflect changes in the database.
 
   function updatePlayerStats(player, newGoals, newMotms) {
     console.log(player.id);

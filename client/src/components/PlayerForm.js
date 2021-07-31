@@ -3,17 +3,7 @@ import React, { useState } from 'react';
 // form to update goals and motms stat.
 
 export default function PlayerForm({ player, updatePlayerStats }) {
-  const [playerStats, setPlayerStats] = useState({
-    //   name: '',
-    //   games: null,
-    //   wins: null,
-    //   losses: null,
-    //   goals: null,
-    //   motms: null,
-    //   teamGoals: null,
-    //   goalsConceded: 0
-  });
-
+  // takes user input and updates 'newGoals' variable, this is then passed to the updatePlayerStats function.
   let newGoals = 0;
   function updateGoals(e) {
     console.log(e.target.value);
@@ -21,6 +11,7 @@ export default function PlayerForm({ player, updatePlayerStats }) {
     newGoals = player.goals + goals;
   }
 
+  // takes user input and updates 'newMotms' variable, this is then passed to the updatePlayerStats function.
   let newMotms = 0;
   function updateMotm() {
     newMotms = player.motms + 1;
@@ -31,9 +22,7 @@ export default function PlayerForm({ player, updatePlayerStats }) {
       <form
         className='playerForm'
         onSubmit={(e) => {
-          // console.log('e: ', e.target.value);
           e.preventDefault();
-          // player.addGoal(newGoals);
           updatePlayerStats(player, newGoals, newMotms);
         }}
       >
