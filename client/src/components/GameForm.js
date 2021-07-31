@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 //form to update goalsConceded, teamGoals, game, wins, losses.
 
-export default function GameForm({ team1, team2, updateGameStats }) {
+export default function GameForm({ team1, team2, updateGameStats, updatePlayerWins }) {
 
   let team1goals = 0;
   let team2goals = 0;
@@ -20,14 +20,16 @@ export default function GameForm({ team1, team2, updateGameStats }) {
     });
     if (team1goals > team2goals) {
       team1.forEach((player) => {
-        player.addWin();
+        // player.addWin();
+        updatePlayerWins(player, player.wins + 1)
       });
       team2.forEach((player) => {
         player.addLoss();
       });
     } else if (team1goals < team2goals) {
       team2.forEach((player) => {
-        player.addWin();
+        // player.addWin();
+        updatePlayerWins(player, player.wins + 1);
       });
       team1.forEach((player) => {
         player.addLoss();

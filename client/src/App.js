@@ -101,6 +101,17 @@ function App() {
       });
     });
   }
+    function updatePlayerWins(player, newWins) {
+      fetch(`http://localhost:3000/squad/${player.id}`, {
+        method: 'PUT',
+        body: JSON.stringify({ wins: newWins }),
+        headers: { 'Content-Type': 'application/json' },
+      }).then((response) => {
+        return response.json().then((data) => {
+          setSquad(data);
+        });
+      });
+    }
 
   return (
     <div className='App'>
@@ -110,7 +121,7 @@ function App() {
         </div>
         <Switch>
           <Route path='/teams'>
-            <Teams updateGameStats={updateGameStats} updatePlayerStats={updatePlayerStats} squad={orderedSquad} />
+            <Teams updatePlayerWins={updatePlayerWins} updateGameStats={updateGameStats} updatePlayerStats={updatePlayerStats} squad={orderedSquad} />
           </Route>
           <Route path='/'>
             <PlayingSquad squad={playingSquad} handleClick={handleClick} />
