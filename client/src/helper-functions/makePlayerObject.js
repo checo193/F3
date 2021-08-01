@@ -8,7 +8,11 @@ class MakePlayer {
     goals,
     motms,
     teamGoals,
-    goalsConceded
+    goalsConceded,
+    needWhiteWriting,
+    url,
+    playerImage
+
   ) {
     this.id = id;
     this.name = name;
@@ -20,6 +24,9 @@ class MakePlayer {
     this.motms = motms;
     this.teamGoals = teamGoals;
     this.goalsConceded = goalsConceded;
+    this.needWhiteWriting = needWhiteWriting;
+    this.url = url;
+    this.playerImage = playerImage;
   }
   goalsPerGame() {
     return Math.round((this.goals / this.games) * 100) / 100;

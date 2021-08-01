@@ -70,19 +70,24 @@ header {
 } */
 
 .playerImage {
-  width: auto;
-  height: 14vh;
+  position: absolute;
+  width: 150px;
+  height: auto;
 }
 
-.imageContainer {
+.playerImageContainer {
   display: flex;
   justify-content: center;
+  position: absolute;
+  width: 270px;
+  top: 107px
 }
 
 .btnContainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
+  margin-bottom: 10px
 }
 
 .teamsTitle {
@@ -107,6 +112,7 @@ header {
   display: flex;
   padding: 3rem;
   overflow: scroll;
+  justify-content: center;
   /* width: 100vw; */
 }
 
@@ -193,6 +199,7 @@ button:hover {
   padding: 3rem;
   overflow: scroll;
   padding-top: 6rem;
+  justify-content: center
 }
 
 .cardImage {
@@ -204,7 +211,7 @@ button:hover {
   display: flex;
 }
 
-.cardImage:focus{
+.cardImage:focus {
   transform: translateY(-4rem);
 }
 
@@ -249,6 +256,7 @@ button:hover {
   justify-content: center;
   width: 100%;
   padding-top: 4vh;
+  text-shadow: -1px 1px 8px grey;
 }
 
 .playerStats {
@@ -271,4 +279,43 @@ button:hover {
   margin-top: 0;
   margin-bottom: 0;
   padding: 1em;
+}
+
+.whiteStat {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 1em;
+  color: white;
+}
+
+.whitePlayerName {
+  color: white;
+  position: absolute;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: 4vh;
+}
+
+.homePage {
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  justify-content: space-around;
+}
+
+.buttonDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.footballImage {
+  height: 600px;
+  width: 600px;
+}
+
+.footballImageContainer {
+  display: flex;
+  justify-content: center;
 }

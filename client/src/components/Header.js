@@ -9,7 +9,7 @@ export default function Header({ orderSquad }) {
           <h1 className='mainTitle'>F3</h1>
         </div>
       </Link>
-      <div className='btnContainer'>
+      {/* <div className='btnContainer'>
         <Link to={'/teams'}>
           <button
             className='createTeamBtn'
@@ -20,7 +20,7 @@ export default function Header({ orderSquad }) {
             Create Teams
           </button>
         </Link>
-      </div>
+      </div> */}
     </header>
   );
 }

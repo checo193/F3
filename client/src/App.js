@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Teams from './containers/Teams';
 import MakePlayer from './helper-functions/makePlayerObject';
 import PlayingSquad from './containers/PlayingSquad';
+import HomePage from './containers/HomePage'
+import CreateTeams from './components/CreateTeams'
 
 function App() {
   const [squad, setSquad] = useState([]);
@@ -28,14 +30,21 @@ function App() {
               player.goals,
               player.motms,
               player.teamGoals,
-              player.goalsConceded
+              player.goalsConceded,
+              player.needWhiteWriting,
+              player.url,
+              player.playerImage
+              // player.cardUrl,
             );
           })
         );
       });
     });
     setPlayingSquad([]);
+    // updatePlayerCard();
   }, [url]);
+
+
 
   // Function to sort a squad in descending order of player rating.
   const playersByRating = (squad) => {
@@ -48,10 +57,12 @@ function App() {
   // When user clicks 'create teams' button, arranged the selected squad in order of skill rating.
   const orderSquad = () => {
     setOrderedSquad(playersByRating(playingSquad));
+    setPlayingSquad([]);
   };
 
   // Either adds or removes players to the 'playingSquad' depending on if they are already included or not.
   const handleClick = (player) => {
+    console.log(player.playerImage);
     let inList = false;
     let index = 0;
 
@@ -172,9 +183,13 @@ function App() {
               updateGoalsConceded={updateGoalsConceded}
             />
           </Route>
-          <Route path='/'>
+          <Route path='/squad'>
             <Squad squad={squad} handleClick={handleClick} />
             <PlayingSquad squad={playingSquad} handleClick={handleClick} />
+            <CreateTeams orderSquad={orderSquad}/>
+          </Route>
+          <Route path='/'>
+            <HomePage orderSquad={orderSquad} />
           </Route>
         </Switch>
       </Router>

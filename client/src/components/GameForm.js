@@ -77,7 +77,7 @@ export default function GameForm({
         </form>
       </div>
       <div className='gameForm'>
-        <Link to={'/'}>
+        <Link to={'/squad'}>
           <button
             className='submitButton'
             onClick={() => {

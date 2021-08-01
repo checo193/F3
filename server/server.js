@@ -42,7 +42,7 @@ app.post('/squad', (req, res) => {
 
 app.put('/squad/:id', (req, res) => {
   const { id } = req.params;
-  const { name, games, wins, losses, goals, motms, teamGoals, goalsConceded } =
+  const { name, games, wins, losses, goals, motms, teamGoals, goalsConceded, cardUrl, needWhiteWriting } =
     req.body;
 
   const old_player = squad.find((player) => player.id == id);
@@ -72,6 +72,12 @@ app.put('/squad/:id', (req, res) => {
   if (goals || goals === 0) {
     old_player.goals = goals;
   }
+
+  if (cardUrl) {
+    old_player.cardUrl = cardUrl;
+  }
+    old_player.needWhiteWriting = needWhiteWriting || false
+
 
   fs.writeFile('./mockDB.json', JSON.stringify(squad), (err) =>
     console.log(err)

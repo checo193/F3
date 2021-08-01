@@ -45,12 +45,12 @@ export default function Teams({
 
   // function to display teams, maps through a team and returns a Player component for each player.
   const displayTeam = (team) => {
-    return team.map((player, index) => {
+    return team.map((player) => {
       return (
         <TeamPlayer
           checkRating={checkRating}
           updatePlayerStats={updatePlayerStats}
-          key={index}
+          key={player.id}
           player={player}
         />
       );
@@ -64,9 +64,6 @@ export default function Teams({
 
   return (
     <>
-      <div className='teamsTitle'>
-        <h1>Teams</h1>
-      </div>
       <div className='teams'>
         <div className='team'>
           <div className='teamTitleContainer'>

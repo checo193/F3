@@ -6,7 +6,6 @@ export default function PlayerForm({ player, updatePlayerStats }) {
   // takes user input and updates 'newGoals' variable, this is then passed to the updatePlayerStats function.
   let newGoals = 0;
   function updateGoals(e) {
-    console.log(e.target.value);
     const goals = Number(e.target.value);
     newGoals = player.goals + goals;
   }
