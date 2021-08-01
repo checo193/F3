@@ -12,12 +12,12 @@ export default function PlayingSquad({ squad, handleClick }) {
   };
   return (
     <>
+      <hr></hr>
       <div className='playingSquadContainer'>
         <div className='playingSquad'>
           <div className='playingSquadList'>{displayPlayingSquad()}</div>
         </div>
       </div>
-      <hr></hr>
     </>
   );
 }

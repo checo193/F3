@@ -149,6 +149,10 @@ function App() {
     });
   }
 
+  function checkRating(player) {
+    console.log(player.calculateRating());
+  }
+
   return (
     <div className='App'>
       <Router>
@@ -158,6 +162,7 @@ function App() {
         <Switch>
           <Route path='/teams'>
             <Teams
+              checkRating={checkRating}
               updatePlayerWins={updatePlayerWins}
               updateGameStats={updateGameStats}
               updatePlayerStats={updatePlayerStats}
@@ -168,8 +173,8 @@ function App() {
             />
           </Route>
           <Route path='/'>
-            <PlayingSquad squad={playingSquad} handleClick={handleClick} />
             <Squad squad={squad} handleClick={handleClick} />
+            <PlayingSquad squad={playingSquad} handleClick={handleClick} />
           </Route>
         </Switch>
       </Router>

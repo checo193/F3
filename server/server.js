@@ -14,8 +14,6 @@ app.get('/squad', (req, res) => {
 });
 
 app.post('/squad', (req, res) => {
-  console.log(req.body);
-
   const { name, games, wins, losses, goals, motms, teamGoals, goalsConceded } =
     req.body;
 
@@ -47,33 +45,31 @@ app.put('/squad/:id', (req, res) => {
   const { name, games, wins, losses, goals, motms, teamGoals, goalsConceded } =
     req.body;
 
-  console.log(name, goals);
-
   const old_player = squad.find((player) => player.id == id);
 
   if (name) {
     old_player.name = name;
   }
 
-  if (games) {
+  if (games || games === 0) {
     old_player.games = games;
   }
-  if (wins) {
+  if (wins || wins === 0) {
     old_player.wins = wins;
   }
-  if (losses) {
+  if (losses || losses === 0) {
     old_player.losses = losses;
   }
-  if (motms) {
+  if (motms || motms === 0) {
     old_player.motms = motms;
   }
-  if (teamGoals) {
+  if (teamGoals || teamGoals === 0) {
     old_player.teamGoals = teamGoals;
   }
-  if (goalsConceded) {
+  if (goalsConceded || goalsConceded === 0) {
     old_player.goalsConceded = goalsConceded;
   }
-  if (goals) {
+  if (goals || goals === 0) {
     old_player.goals = goals;
   }
 
@@ -83,6 +79,7 @@ app.put('/squad/:id', (req, res) => {
 
   res.json(squad);
 });
+
 app.listen(PORT, (err) => {
   if (err) {
     console.log(err);

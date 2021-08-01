@@ -47,7 +47,7 @@ class MakePlayer {
 
 
   // These methods are now no longer used.
-  
+
   // addGame() {
   //   this.games++;
   // }
@@ -88,7 +88,7 @@ class MakePlayer {
     rating = Math.round(rating * 100) / 100;
 
     this.rating = rating;
-    return rating;
+    return rating || 0;
   }
 }
 

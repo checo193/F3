@@ -1,6 +1,5 @@
 import React from 'react';
 import Player from '../components/Player';
-import TestPlayer from '../components/TestPlayer'
 
 export default function Squad({ squad, handleClick }) {
   // display all the players in the squad, loops through squad, returning a player component for each player.
@@ -11,7 +10,6 @@ export default function Squad({ squad, handleClick }) {
       );
     });
   };
-
 
   return (
     <>

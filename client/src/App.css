@@ -105,16 +105,16 @@ header {
 
 .playingSquadList {
   display: flex;
+  padding: 3rem;
   overflow: scroll;
-  max-width: 100vw;
-  /* flex-wrap: wrap; */
+  /* width: 100vw; */
 }
 
-.playingSquadContainer {
+/* .playingSquadContainer {
   display: flex;
   justify-content: center;
-  /* max-height:400px */
-}
+  height: auto;
+} */
 
 .title {
   color: white;
@@ -127,6 +127,12 @@ header {
 
 .playerAndForm {
   display: flex;
+}
+
+.playerFormContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 label {
@@ -186,6 +192,7 @@ button:hover {
   display: flex;
   padding: 3rem;
   overflow: scroll;
+  padding-top: 6rem;
 }
 
 .cardImage {
@@ -195,6 +202,10 @@ button:hover {
   filter: drop-shadow(-1rem 0 3rem #000);
   transition: 0.2s;
   display: flex;
+}
+
+.cardImage:focus{
+  transform: translateY(-4rem);
 }
 
 .cardImage:hover {
