@@ -1,0 +1,26 @@
+.Player_playerImage {
+  position: absolute;
+  width: 150px;
+  height: auto;
+}
+
+.Player_playerImageContainer {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 270px;
+  top: 107px
+}
+
+.Player_cardImage {
+  height: 400px;
+  min-width: 270px;
+  position: relative;
+  filter: drop-shadow(-1rem 0 3rem #000);
+  transition: 0.2s;
+  display: flex;
+}
+
+.Player_playerAndForm {
+  display: flex;
+}

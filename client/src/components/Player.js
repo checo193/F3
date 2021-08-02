@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import '../CSS_Files/Player.css'
 
 export default function Player({ player, handleClick }) {
   const iconCard = {
@@ -42,10 +43,10 @@ export default function Player({ player, handleClick }) {
   const determinePlayerNameClass = (player) => {
     let className = '';
     player.games >= 20
-      ? (className = 'whitePlayerName')
-      : (className = 'playerName');
+      ? (className = 'Player_whitePlayerName')
+      : (className = 'Player_playerName');
     player.motms >= 10
-      ? (className = 'whitePlayerName')
+      ? (className = 'Player_whitePlayerName')
       : (className = className);
 
     return className;
@@ -53,36 +54,36 @@ export default function Player({ player, handleClick }) {
 
   const determineStatClass = (player) => {
     let className = '';
-    player.games >= 20 ? (className = 'whiteStat') : (className = 'stat');
+    player.games >= 20 ? (className = 'Player_whiteStat') : (className = 'Player_stat');
         player.motms >= 10
-          ? (className = 'whiteStat')
+          ? (className = 'Player_whiteStat')
           : (className = className);
     return className;
   };
   return (
     <div
-      className='playerCard'
+      className='Player_playerCard'
       onClick={() => {
         // adds or removes players from playing squad.
         handleClick(player);
       }}
     >
-      <img className='cardImage' src={determineCard(player)}></img>
+      <img className='Player_cardImage' src={determineCard(player)}></img>
       <div className={determinePlayerNameClass(player)}>
         <h3>{player.name}</h3>
       </div>
-      <div className='playerImageContainer'>
-        <img className='playerImage' src={player.url}></img>
+      <div className='Player_playerImageContainer'>
+        <img className='Player_playerImage' src={player.url}></img>
       </div>
-      <div className='playerStats'>
-        <div className='playerStats1'>
+      <div className='Player_playerStats'>
+        <div className='Player_playerStats1'>
           <h6 className={determineStatClass(player)}>Games: {player.games}</h6>
           <h6 className={determineStatClass(player)}>Wins: {player.wins}</h6>
           <h6 className={determineStatClass(player)}>
             Losses: {player.losses}
           </h6>
         </div>
-        <div className='playerStats2'>
+        <div className='Player_playerStats2'>
           <h6 className={determineStatClass(player)}>Motms: {player.motms}</h6>
           <h6 className={determineStatClass(player)}>Goals: {player.goals}</h6>
           <h6 className={determineStatClass(player)}>

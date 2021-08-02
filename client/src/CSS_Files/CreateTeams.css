@@ -1,0 +1,18 @@
+.CreateTeams_btnContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.CreateTeams_createTeamBtn {
+  width: 10vw;
+  height: 2vw;
+  border: solid white;
+  border-radius: 10px;
+}
+
+.CreateTeams_createTeamBtn:hover {
+  background-color: green;
+  color: white;
+}

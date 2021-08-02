@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TeamPlayer from '../components/TeamPlayer';
 import GameForm from '../components/GameForm';
+import '../CSS_Files/Teams.css'
 
 export default function Teams({
   squad,
@@ -64,16 +65,16 @@ export default function Teams({
 
   return (
     <>
-      <div className='teams'>
-        <div className='team'>
-          <div className='teamTitleContainer'>
-            <h1 className='title'>Team 1</h1>
+      <div className='Teams_teams'>
+        <div className='Teams_team'>
+          <div className='Teams_teamTitleContainer'>
+            <h1 className='Teams_title'>Team 1</h1>
           </div>
           <div>{displayTeam(team1)}</div>
         </div>
-        <div className='team'>
-          <div className='teamTitleContainer'>
-            <h1 className='title'>Team 2</h1>
+        <div className='Teams_team'>
+          <div className='Teams_teamTitleContainer'>
+            <h1 className='Teams_title'>Team 2</h1>
           </div>
           <div>{displayTeam(team2)}</div>
         </div>

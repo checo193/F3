@@ -42,7 +42,7 @@ app.post('/squad', (req, res) => {
 
 app.put('/squad/:id', (req, res) => {
   const { id } = req.params;
-  const { name, games, wins, losses, goals, motms, teamGoals, goalsConceded, cardUrl, needWhiteWriting } =
+  const { name, games, wins, losses, goals, motms, teamGoals, goalsConceded, cardUrl, needWhiteWriting, url } =
     req.body;
 
   const old_player = squad.find((player) => player.id == id);
@@ -71,6 +71,10 @@ app.put('/squad/:id', (req, res) => {
   }
   if (goals || goals === 0) {
     old_player.goals = goals;
+  }
+
+  if (url) {
+    old_player.url = url;
   }
 
   if (cardUrl) {

@@ -1,5 +1,6 @@
 import React from 'react';
 import Player from '../components/Player';
+import '../CSS_Files/Squad.css'
 
 export default function Squad({ squad, handleClick }) {
  
@@ -17,9 +18,9 @@ export default function Squad({ squad, handleClick }) {
   return (
     <>
     <hr></hr>
-      <div className='squadContainer'>
-        <div className='squad'>
-          <div className='squadList'>{displaySquad()}</div>
+      <div className='Squad_squadContainer'>
+        <div className='Squad_squad'>
+          <div className='Squad_squadList'>{displaySquad()}</div>
         </div>
       </div>
     </>

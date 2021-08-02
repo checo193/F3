@@ -1,0 +1,27 @@
+.GameForm_teamGoalsForm {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.GameForm_team1GoalForm {
+  padding: 10px;
+}
+
+.GameForm_gameForm {
+  display: flex;
+  justify-content: center;
+}
+
+.GameForm_submitButton {
+  margin-bottom: 10vh;
+  width: 10vw;
+  height: 2vw;
+  border: solid white;
+  border-radius: 10px;
+}
+
+.GameForm_submitButton:hover {
+  background-color: green;
+  color: white;
+}

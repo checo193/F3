@@ -1,4 +1,4 @@
-import './App.css';
+
 import Squad from './containers/Squad';
 import Header from './components/Header';
 import React, { useState, useEffect } from 'react';
@@ -8,6 +8,7 @@ import MakePlayer from './helper-functions/makePlayerObject';
 import PlayingSquad from './containers/PlayingSquad';
 import HomePage from './containers/HomePage'
 import CreateTeams from './components/CreateTeams'
+import playersByRating from './helper-functions/app-functions'
 
 function App() {
   const [squad, setSquad] = useState([]);
@@ -47,12 +48,12 @@ function App() {
 
 
   // Function to sort a squad in descending order of player rating.
-  const playersByRating = (squad) => {
-    const newSquad = [...squad];
-    return newSquad.sort((currentPlayer, nextPlayer) => {
-      return nextPlayer.calculateRating() - currentPlayer.calculateRating();
-    });
-  };
+  // const playersByRating = (squad) => {
+  //   const newSquad = [...squad];
+  //   return newSquad.sort((currentPlayer, nextPlayer) => {
+  //     return nextPlayer.calculateRating() - currentPlayer.calculateRating();
+  //   });
+  // };
 
   // When user clicks 'create teams' button, arranged the selected squad in order of skill rating.
   const orderSquad = () => {

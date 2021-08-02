@@ -24,9 +24,9 @@ export default function TeamPlayer({ player, updatePlayerStats, checkRating }) {
     url: 'https://scontent.xx.fbcdn.net/v/t1.15752-9/227876099_200030145415450_1873226119598340546_n.png?_nc_cat=109&ccb=1-3&_nc_sid=aee45a&_nc_ohc=Fq7NbQ8kRlUAX8RiVDQ&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=2efb33d7d681b6bf3fa6ecea2e5d6fb7&oe=612C4AF3',
   };
 
-    const blackCard = {
-      url: 'https://scontent.xx.fbcdn.net/v/t1.15752-9/228207875_664672958263219_5607581264108048679_n.png?_nc_cat=107&ccb=1-3&_nc_sid=aee45a&_nc_ohc=rNFmibJnTf0AX89qiaD&_nc_oc=AQmeEVvGR_jFjvboPJneGlaKsLJGlEtc32snrnwpmCaD90DqeuzRgHfQHL6xTrbzqYVsmlTUfAfCwkZvdtQEBbv-&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=06d8c2ad07418fe80d3445c8fb23ba1a&oe=612C6E48',
-    };
+  const blackCard = {
+    url: 'https://scontent.xx.fbcdn.net/v/t1.15752-9/228207875_664672958263219_5607581264108048679_n.png?_nc_cat=107&ccb=1-3&_nc_sid=aee45a&_nc_ohc=rNFmibJnTf0AX89qiaD&_nc_oc=AQmeEVvGR_jFjvboPJneGlaKsLJGlEtc32snrnwpmCaD90DqeuzRgHfQHL6xTrbzqYVsmlTUfAfCwkZvdtQEBbv-&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=06d8c2ad07418fe80d3445c8fb23ba1a&oe=612C6E48',
+  };
 
   const determineCard = (player) => {
     let url = '';
@@ -43,10 +43,10 @@ export default function TeamPlayer({ player, updatePlayerStats, checkRating }) {
   const determinePlayerNameClass = (player) => {
     let className = '';
     player.games >= 20
-      ? (className = 'whitePlayerName')
-      : (className = 'playerName');
+      ? (className = 'Player_whitePlayerName')
+      : (className = 'Player_playerName');
     player.motms >= 10
-      ? (className = 'whitePlayerName')
+      ? (className = 'Player_whitePlayerName')
       : (className = className);
 
     return className;
@@ -54,29 +54,33 @@ export default function TeamPlayer({ player, updatePlayerStats, checkRating }) {
 
   const determineStatClass = (player) => {
     let className = '';
-    player.games >= 20 ? (className = 'whiteStat') : (className = 'stat');
-    player.motms >= 10 ? (className = 'whiteStat') : (className = className);
+    player.games >= 20
+      ? (className = 'Player_whiteStat')
+      : (className = 'Player_stat');
+    player.motms >= 10
+      ? (className = 'Player_whiteStat')
+      : (className = className);
     return className;
   };
   return (
     <>
-      <div className='playerAndForm'>
+      <div className='Player_playerAndForm'>
         <div
           onClick={() => {
             checkRating(player);
           }}
-          className='playerCard'
+          className='Player_playerCard'
         >
-          <img className='cardImage' src={determineCard(player)}></img>
+          <img className='Player_cardImage' src={determineCard(player)}></img>
           <div className={determinePlayerNameClass(player)}>
             <h3>{player.name}</h3>
           </div>
-          <div className='playerImageContainer'>
-            <img className='playerImage' src={player.url}></img>
+          <div className='Player_playerImageContainer'>
+            <img className='Player_playerImage' src={player.url}></img>
           </div>
 
-          <div className='playerStats'>
-            <div className='playerStats1'>
+          <div className='Player_playerStats'>
+            <div className='Player_playerStats1'>
               <h6 className={determineStatClass(player)}>
                 Games: {player.games}
               </h6>
@@ -87,7 +91,7 @@ export default function TeamPlayer({ player, updatePlayerStats, checkRating }) {
                 Losses: {player.losses}
               </h6>
             </div>
-            <div className='playerStats2'>
+            <div className='Player_playerStats2'>
               <h6 className={determineStatClass(player)}>
                 Motms: {player.motms}
               </h6>

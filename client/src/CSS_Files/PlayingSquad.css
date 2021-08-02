@@ -1,0 +1,11 @@
+.PlayingSquad_playingSquad {
+  display: flex;
+  flex-direction: column;
+}
+
+.PlayingSquad_playingSquadList {
+  display: flex;
+  padding: 3rem;
+  overflow: scroll;
+  justify-content: center;
+}

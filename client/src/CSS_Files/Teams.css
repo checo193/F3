@@ -1,0 +1,19 @@
+.Teams_teamsTitle {
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.Teams_teams {
+  display: flex;
+  justify-content: space-around;
+}
+
+.Teams_title {
+  color: white;
+}
+
+.Teams_teamTitleContainer {
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,18 @@
+.PlayerForm_playerForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.PlayerForm_playerFormLabel {
+  margin: 10px;
+}
+
+.PlayerForm_playerFormContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+label {
+  color: white;
+}

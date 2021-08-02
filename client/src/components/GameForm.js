@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../CSS_Files/GameForm.css'
 
 //form to update goalsConceded, teamGoals, game, wins, losses.
 
@@ -62,24 +63,24 @@ export default function GameForm({
   }
   return (
     <>
-      <div className='teamGoalsForm'>
+      <div className='GameForm_teamGoalsForm'>
         <form
           onSubmit={(e) => {
             e.preventDefault();
           }}
         >
-          <label className='team1GoalForm'>
+          <label className='GameForm_team1GoalForm'>
             Team 1 Goals: <input onChange={updateTeam1Goals}></input>
           </label>
-          <label className='team2GoalForm'>
+          <label className='GameForm_team2GoalForm'>
             Team 2 Goals: <input onChange={updateTeam2Goals}></input>
           </label>
         </form>
       </div>
-      <div className='gameForm'>
+      <div className='GameForm_gameForm'>
         <Link to={'/squad'}>
           <button
-            className='submitButton'
+            className='GameForm_submitButton'
             onClick={() => {
               handleClick();
             }}

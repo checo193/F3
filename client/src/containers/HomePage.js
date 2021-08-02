@@ -1,22 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import RotatingFootball from '../components/RotatingFootball'
+import Login from '../components/Login'
+import '../CSS_Files/HomePage.css'
 
 export default function HomePage({ orderSquad }) {
   return (
-    <div className='homePage'>
-      <div className='footballImageContainer'>
-        {/* <img
-          className='footballImage'
-          src='https://www.freeiconspng.com/thumbs/football-png/football-png-7.png'
-        ></img> */}
-        <RotatingFootball/>
+    <div className='HomePage_homePage'>
+      <div className='HomePage_logInContainer'>
+
+        <Login/>
       </div>
-      <div className='buttonDiv'>
-        <div className='btnContainer'>
+      <div className='HomePage_buttonDiv'>
+        <div className='HomePage_btnContainer'>
           <Link to={'/squad'}>
             <button
-              className='createTeamBtn'
+              className='HomePage_viewSquadBtn'
               onClick={() => {
                 orderSquad();
               }}

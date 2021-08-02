@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../CSS_Files/PlayerForm.css'
 
 // form to update goals and motms stat.
 
@@ -17,19 +18,19 @@ export default function PlayerForm({ player, updatePlayerStats }) {
   }
 
   return (
-    <div className='playerFormContainer'>
+    <div className='PlayerForm_playerFormContainer'>
       <form
-        className='playerForm'
+        className='PlayerForm_playerForm'
         onSubmit={(e) => {
           e.preventDefault();
           updatePlayerStats(player, newGoals, newMotms);
         }}
       >
-        <label className='playerFormLabel'>
+        <label className='PlayerForm_playerFormLabel'>
           Goals
           <input onChange={updateGoals} />
         </label>
-        <label className='playerFormLabel'>
+        <label className='PlayerForm_playerFormLabel'>
           MOTM
           <input type='checkbox' onChange={updateMotm} />
         </label>

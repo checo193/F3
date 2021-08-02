@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../CSS_Files/CreateTeams.css'
 
 export default function CreateTeam({orderSquad}) {
   return (
-    <div className='btnContainer'>
+    <div className='CreateTeams_btnContainer'>
       <Link to={'/teams'}>
         <button
-          className='createTeamBtn'
+          className='CreateTeams_createTeamBtn'
           onClick={() => {
             orderSquad();
           }}
