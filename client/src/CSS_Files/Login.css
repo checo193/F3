@@ -1,0 +1,44 @@
+.Login_formContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.Login_form {
+  border: 3px solid #f1f1f1;
+  width: 60vw;
+  height: 40vh;
+  display: flex;
+  /* flex-direction: column;
+  justify-content: space-around; */
+}
+
+.Login_usernameInput, .Login_passwordInput {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.Login_button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.Login_button:hover {
+  opacity: 0.8;
+}
+
+.Login_container {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100vw;
+}

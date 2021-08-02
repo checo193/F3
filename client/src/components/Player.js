@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import '../CSS_Files/Player.css';
 import {determinePlayerNameClass, determineCard, determineStatClass } from '../helper-functions/player-functions';
-// import determineCard from '../helper-functions/player-functions'
 
 export default function Player({ player, handleClick }) {
 

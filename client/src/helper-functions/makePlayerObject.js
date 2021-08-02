@@ -53,36 +53,6 @@ class MakePlayer {
   }
 
 
-  // These methods are now no longer used.
-
-  // addGame() {
-  //   this.games++;
-  // }
-
-  // addGoal(num) {
-  //   this.goals = this.goals + num;
-  // }
-
-  // addWin() {
-  //   this.wins++;
-  // }
-
-  // addLoss() {
-  //   this.losses++;
-  // }
-
-  // addTeamGoals(num) {
-  //   this.teamGoals = this.teamGoals + num;
-  // }
-
-  // addGoalsConceded(num) {
-  //   this.goalsConceded = this.goalsConceded + num;
-  // }
-
-  // addMotm() {
-  //   this.motms = this.motms + 1;
-  // }
-
   calculateRating() {
     let rating =
       this.goalsPerGame() +
