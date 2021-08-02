@@ -12,7 +12,7 @@ export default function CreateTeam({orderSquad}) {
             orderSquad();
           }}
         >
-          Create Teams
+          <b>Create Teams</b>
         </button>
       </Link>
     </div>

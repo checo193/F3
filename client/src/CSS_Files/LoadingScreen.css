@@ -1,0 +1,8 @@
+.LoadingScreen_titleContainer {
+  display: flex;
+  justify-content: center
+}
+
+.LoadingScreen_title {
+  color: white;
+}

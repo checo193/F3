@@ -77,7 +77,7 @@ export default function Teams({
           <div>{displayTeam(team2)}</div>
         </div>
       </div>
-      <div>
+      <div className='Teams_GameForm'>
         <GameForm
           team1={team1}
           team2={team2}

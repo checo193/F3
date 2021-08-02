@@ -8,11 +8,26 @@
 .CreateTeams_createTeamBtn {
   width: 10vw;
   height: 2vw;
-  border: solid white;
   border-radius: 10px;
+  border: none;
+
+  background-color: #04AA6D;
+  color: white;
+  cursor: pointer;
+
+
 }
 
-.CreateTeams_createTeamBtn:hover {
-  background-color: green;
+  /* background-color: #04AA6D;
   color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 10px; */
+
+.CreateTeams_createTeamBtn:hover {
+  opacity: 0.8;
+
 }

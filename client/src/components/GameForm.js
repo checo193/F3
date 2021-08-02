@@ -85,7 +85,7 @@ export default function GameForm({
               handleClick();
             }}
           >
-            Submit Game
+            <b>Submit Game</b>
           </button>
         </Link>
       </div>

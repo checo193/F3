@@ -17,3 +17,9 @@
   display: flex;
   justify-content: center;
 }
+
+.Teams_GameForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}

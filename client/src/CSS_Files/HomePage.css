@@ -3,6 +3,8 @@
   flex-direction: column;
   height: 90vh;
   justify-content: space-around;
+  position: relative;
+  bottom: 90px
 }
 
 .HomePage_buttonDiv {
@@ -10,15 +12,27 @@
   justify-content: center;
 }
 
-.HomePage_viewSquadBtn {
+/* .HomePage_viewSquadBtn {
   width: 10vw;
   height: 2vw;
   border: solid white;
   border-radius: 10px;
-}
+} */
 
 .HomePage_viewSquadBtn:hover {
-  background-color: green;
+  opacity: 0.8;
+
+}
+
+.HomePage_viewSquadBtn {
+  background-color: #04AA6D;
   color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 10px;
+
 }
 

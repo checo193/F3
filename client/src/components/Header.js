@@ -5,7 +5,7 @@ import '../CSS_Files/Header.css';
 export default function Header({ orderSquad }) {
   return (
     <header>
-      <Link to={'/'}>
+      <Link to={'/squad'}>
         <div>
           <h1 className='Header_title'>F3</h1>
         </div>

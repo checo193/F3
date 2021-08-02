@@ -8,6 +8,7 @@ import PlayingSquad from './containers/PlayingSquad';
 import HomePage from './containers/HomePage';
 import CreateTeams from './components/CreateTeams';
 import playersByRating from './helper-functions/app-functions';
+import LoadingScreen from './components/LoadingScreen';
 
 function App() {
   const [squad, setSquad] = useState([]);
@@ -172,6 +173,9 @@ function App() {
             <Squad squad={squad} handleClick={handleClick} />
             <PlayingSquad squad={playingSquad} handleClick={handleClick} />
             <CreateTeams orderSquad={orderSquad} />
+          </Route>
+          <Route path='/loading'>
+            <LoadingScreen />
           </Route>
           <Route path='/'>
             <HomePage orderSquad={orderSquad} />
