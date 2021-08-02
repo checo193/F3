@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import '../CSS_Files/Player.css'
+import '../CSS_Files/Player.css';
+import determinePlayerNameClass from '../helper-functions/player-functions';
 
 export default function Player({ player, handleClick }) {
   const iconCard = {
@@ -40,24 +41,14 @@ export default function Player({ player, handleClick }) {
     return url;
   };
 
-  const determinePlayerNameClass = (player) => {
-    let className = '';
-    player.games >= 20
-      ? (className = 'Player_whitePlayerName')
-      : (className = 'Player_playerName');
-    player.motms >= 10
-      ? (className = 'Player_whitePlayerName')
-      : (className = className);
-
-    return className;
-  };
-
   const determineStatClass = (player) => {
     let className = '';
-    player.games >= 20 ? (className = 'Player_whiteStat') : (className = 'Player_stat');
-        player.motms >= 10
-          ? (className = 'Player_whiteStat')
-          : (className = className);
+    player.games >= 20
+      ? (className = 'Player_whiteStat')
+      : (className = 'Player_stat');
+    player.motms >= 10
+      ? (className = 'Player_whiteStat')
+      : (className = className);
     return className;
   };
   return (

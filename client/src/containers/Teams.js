@@ -11,7 +11,6 @@ export default function Teams({
   updatePlayerLosses,
   updateTeamGoals,
   updateGoalsConceded,
-  checkRating
 }) {
   const [team1, setTeam1] = useState([]);
   const [team2, setTeam2] = useState([]);
@@ -49,7 +48,6 @@ export default function Teams({
     return team.map((player) => {
       return (
         <TeamPlayer
-          checkRating={checkRating}
           updatePlayerStats={updatePlayerStats}
           key={player.id}
           player={player}
