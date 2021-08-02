@@ -28,7 +28,7 @@ export default function PlayerForm({ player, updatePlayerStats }) {
       >
         <label className='PlayerForm_playerFormLabel'>
           Goals
-          <input onChange={updateGoals} />
+          <input placeholder={`${player.name}'s goals`} onChange={updateGoals} />
         </label>
         <label className='PlayerForm_playerFormLabel'>
           MOTM
