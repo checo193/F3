@@ -1,7 +1,6 @@
 import React from 'react';
 import '../CSS_Files/Login.css';
 import { Link } from 'react-router-dom';
-import url from '../assets/Screenshot 2021-08-02 at 12.10.02.png'
 
 export default function LogIn() {
   return (

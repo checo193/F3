@@ -7,7 +7,18 @@
   display: flex;
   padding: 3rem;
   overflow: scroll;
-  padding-top: 6rem;
+  /* padding-top: 6rem; */
   justify-content: center
+}
+
+.Squad_titleContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.Squad_title {
+  color: white;
+  padding: 0px;
+  margin: 0px;
 }
 

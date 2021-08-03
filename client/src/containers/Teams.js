@@ -57,9 +57,10 @@ export default function Teams({
   };
 
   // As soon as the teams page is loaded, create the teams.
+
   useEffect(() => {
     createTeams(squad);
-  }, []);
+  }, [squad]);
 
   return (
     <>

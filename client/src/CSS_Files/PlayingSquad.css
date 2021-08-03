@@ -9,3 +9,14 @@
   overflow: scroll;
   justify-content: center;
 }
+
+.PlayingSquad_titleContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.PlayingSquad_title {
+  color: white;
+  padding: 0px;
+  margin: 0px;
+}

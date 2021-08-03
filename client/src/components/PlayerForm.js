@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../CSS_Files/PlayerForm.css'
 
 // form to update goals and motms stat.

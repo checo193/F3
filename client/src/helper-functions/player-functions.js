@@ -1,4 +1,4 @@
-// import '../CSS_Files/Player.css'
+
 
 const iconCard = {
   url: 'https://scontent.xx.fbcdn.net/v/t1.15752-9/226077811_931117614135776_1330883807236193151_n.png?_nc_cat=110&ccb=1-3&_nc_sid=aee45a&_nc_ohc=vpI9R1wcjSkAX-iC008&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=1443dfca95eb7847a6d7fa0fa388e281&oe=612A08AA',
@@ -29,8 +29,12 @@ const blackCard = {
 export function determineCard(player) {
   let url = '';
   player.goals >= 10 ? (url = iconCard.url) : (url = normalCard.url);
-  player.games >= 20 ? (url = neonCard.url) : (url = url);
-  player.motms >= 10 ? (url = blackCard.url) : (url = url);
+  if (player.games >= 20) {
+    url = neonCard.url;
+  }
+  if (player.motms >= 10) {
+    url = blackCard.url;
+  }
   if (player.id === 1) {
     url = fireWorkCard.url;
   }
@@ -43,9 +47,9 @@ export function determinePlayerNameClass(player) {
   player.games >= 20
     ? (className = 'Player_whitePlayerName')
     : (className = 'Player_playerName');
-  player.motms >= 10
-    ? (className = 'Player_whitePlayerName')
-    : (className = className);
+  if (player.motms >= 10) {
+    className = 'Player_whitePlayerName';
+  }
 
   return className;
 }
@@ -55,11 +59,8 @@ export function determineStatClass(player) {
   player.games >= 20
     ? (className = 'Player_whiteStat')
     : (className = 'Player_stat');
-  player.motms >= 10
-    ? (className = 'Player_whiteStat')
-    : (className = className);
+  if (player.motms >= 10) {
+    className = 'Player_whiteStat';
+  }
   return className;
 }
-
-// module.exports = determinePlayerNameClass;
-// module.exports = determineCard;

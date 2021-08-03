@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export PGPASSWORD = 'password'
+
 database="squaddb"
 
 echo "Configuring database: $database"

@@ -51,9 +51,9 @@ function App() {
     setPlayingSquad([]);
   };
 
+
   // Either adds or removes players to the 'playingSquad' depending on if they are already included or not.
   const handleClick = (player) => {
-    console.log(player.playerImage);
     let inList = false;
     let index = 0;
 

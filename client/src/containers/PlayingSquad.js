@@ -4,6 +4,7 @@ import '../CSS_Files/PlayingSquad.css'
 
 export default function PlayingSquad({ squad, handleClick }) {
   // display all the players in the squad, loops through the 'playing squad', returning a player component for each player.
+
   const displayPlayingSquad = () => {
     return squad.map((player) => {
       return (
@@ -14,9 +15,14 @@ export default function PlayingSquad({ squad, handleClick }) {
   return (
     <>
       <hr></hr>
+      <div className='PlayingSquad_titleContainer'>
+        <h3 className='PlayingSquad_title'>Who's Playing</h3>
+      </div>
       <div className='PlayingSquad_playingSquadContainer'>
         <div className='PlayingSquad_playingSquad'>
-          <div className='PlayingSquad_playingSquadList'>{displayPlayingSquad()}</div>
+          <div className='PlayingSquad_playingSquadList'>
+            {displayPlayingSquad()}
+          </div>
         </div>
       </div>
     </>
