@@ -8,7 +8,7 @@
   padding: 3rem;
   overflow: scroll;
   /* padding-top: 6rem; */
-  justify-content: center
+  justify-content: center;
 }
 
 .Squad_titleContainer {
@@ -24,6 +24,7 @@
 
 .Squad_container {
   height: 53.5vh;
+  max-width: 100vw;
 }
 
 .Squad_addPlayerButton {
@@ -39,6 +40,6 @@
 .Squad_buttonContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center
+  justify-content: center;
 }
 

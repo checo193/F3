@@ -1,6 +1,10 @@
 .PlayerForm_playerForm {
   display: flex;
   flex-direction: column;
+  border: solid white;
+  background-color: darkslategray;
+  box-shadow: -1rem 0 3rem #000;
+  border-radius: 10px;
 }
 
 .PlayerForm_playerFormLabel {

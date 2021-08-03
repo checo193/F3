@@ -18,7 +18,7 @@ function App() {
   const url = window.location.pathname.split('/').pop();
 
   useEffect(() => {
-    fetch('http://localhost:5000/squad').then((response) => {
+    fetch('http://localhost:3000/squad').then((response) => {
       return response.json().then((data) => {
         setSquad(
           data.map((player) => {
@@ -32,10 +32,7 @@ function App() {
               player.motms,
               player.teamGoals,
               player.goalsConceded,
-              player.needWhiteWriting,
-              player.url,
-              player.playerImage
-              // player.cardUrl,
+              player.imageUrl
             );
           })
         );
@@ -53,6 +50,7 @@ function App() {
 
   // Either adds or removes players to the 'playingSquad' depending on if they are already included or not.
   const handleClick = (player) => {
+    console.log(player.imageUrl);
     let inList = false;
     let index = 0;
 
@@ -81,7 +79,7 @@ function App() {
 
   function updatePlayerStats(player, newGoals, newMotms) {
     console.log(player.id);
-    fetch(`http://localhost:5000/player/${player.id}`, {
+    fetch(`http://localhost:3000/squad/${player.id}`, {
       method: 'PUT',
       body: JSON.stringify({ goals: newGoals, motms: newMotms }),
       headers: { 'Content-Type': 'application/json' },
@@ -93,7 +91,7 @@ function App() {
   }
 
   function updateGameStats(player, newGames) {
-    fetch(`http://localhost:5000/player/${player.id}`, {
+    fetch(`http://localhost:3000/squad/${player.id}`, {
       method: 'PUT',
       body: JSON.stringify({ games: newGames }),
       headers: { 'Content-Type': 'application/json' },
@@ -104,7 +102,7 @@ function App() {
     });
   }
   function updatePlayerWins(player, newWins) {
-    fetch(`http://localhost:5000/player/${player.id}`, {
+    fetch(`http://localhost:3000/squad/${player.id}`, {
       method: 'PUT',
       body: JSON.stringify({ wins: newWins }),
       headers: { 'Content-Type': 'application/json' },
@@ -115,7 +113,7 @@ function App() {
     });
   }
   function updatePlayerLosses(player, newLosses) {
-    fetch(`http://localhost:5000/player/${player.id}`, {
+    fetch(`http://localhost:3000/squad/${player.id}`, {
       method: 'PUT',
       body: JSON.stringify({ losses: newLosses }),
       headers: { 'Content-Type': 'application/json' },
@@ -127,7 +125,7 @@ function App() {
   }
 
   function updateTeamGoals(player, newTeamGoals) {
-    fetch(`http://localhost:5000/player/${player.id}`, {
+    fetch(`http://localhost:3000/squad/${player.id}`, {
       method: 'PUT',
       body: JSON.stringify({ teamGoals: newTeamGoals }),
       headers: { 'Content-Type': 'application/json' },
@@ -139,7 +137,7 @@ function App() {
   }
 
   function updateGoalsConceded(player, newGoalsConceded) {
-    fetch(`http://localhost:5000/player/${player.id}`, {
+    fetch(`http://localhost:3000/squad/${player.id}`, {
       method: 'PUT',
       body: JSON.stringify({ goalsConceded: newGoalsConceded }),
       headers: { 'Content-Type': 'application/json' },

@@ -55,11 +55,12 @@ export default function GameForm({
   function updateTeam1Goals(e) {
     const teamGoals = Number(e.target.value);
     team1goals = teamGoals;
+    console.log(team1goals, team1goals + team1goals);
   }
 
   function updateTeam2Goals(e) {
-    const goalsConceded = Number(e.target.value);
-    team2goals = goalsConceded;
+    const teamGoals = Number(e.target.value);
+    team2goals = teamGoals;
   }
   return (
     <>

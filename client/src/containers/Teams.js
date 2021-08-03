@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TeamPlayer from '../components/TeamPlayer';
 import GameForm from '../components/GameForm';
-import '../CSS_Files/Teams.css'
+import '../CSS_Files/Teams.css';
 
 export default function Teams({
   squad,
@@ -78,16 +78,18 @@ export default function Teams({
           <div>{displayTeam(team2)}</div>
         </div>
       </div>
-      <div className='Teams_GameForm'>
-        <GameForm
-          team1={team1}
-          team2={team2}
-          updateGameStats={updateGameStats}
-          updatePlayerWins={updatePlayerWins}
-          updatePlayerLosses={updatePlayerLosses}
-          updateTeamGoals={updateTeamGoals}
-          updateGoalsConceded={updateGoalsConceded}
-        />
+      <div className='Teams_GameFormContainer'>
+        <div className='Teams_GameForm'>
+          <GameForm
+            team1={team1}
+            team2={team2}
+            updateGameStats={updateGameStats}
+            updatePlayerWins={updatePlayerWins}
+            updatePlayerLosses={updatePlayerLosses}
+            updateTeamGoals={updateTeamGoals}
+            updateGoalsConceded={updateGoalsConceded}
+          />
+        </div>
       </div>
     </>
   );

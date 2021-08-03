@@ -1,5 +1,3 @@
-
-
 const iconCard = {
   url: 'https://scontent.xx.fbcdn.net/v/t1.15752-9/226077811_931117614135776_1330883807236193151_n.png?_nc_cat=110&ccb=1-3&_nc_sid=aee45a&_nc_ohc=vpI9R1wcjSkAX-iC008&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=1443dfca95eb7847a6d7fa0fa388e281&oe=612A08AA',
   used: false,
@@ -35,7 +33,7 @@ export function determineCard(player) {
   if (player.motms >= 10) {
     url = blackCard.url;
   }
-  if (player.id === 1) {
+  if (player.wins >= 20) {
     url = fireWorkCard.url;
   }
 

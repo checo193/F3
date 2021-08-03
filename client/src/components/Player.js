@@ -18,7 +18,7 @@ export default function Player({ player, handleClick }) {
         <h3>{player.name}</h3>
       </div>
       <div className='Player_playerImageContainer'>
-        <img className='Player_playerImage' src={player.url} alt='player profile'></img>
+        <img className='Player_playerImage' src={player.imageUrl} alt='player profile'></img>
       </div>
       <div className='Player_playerStats'>
         <div className='Player_playerStats1'>

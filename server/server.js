@@ -14,7 +14,7 @@ app.get('/squad', (req, res) => {
 });
 
 app.post('/squad', (req, res) => {
-  const { name, games, wins, losses, goals, motms, teamGoals, goalsConceded } =
+  const { name, games, wins, losses, goals, motms, teamGoals, goalsConceded, imageUrl } =
     req.body;
 
   const player_ids = squad.map((player) => player.id);
@@ -29,6 +29,7 @@ app.post('/squad', (req, res) => {
     motms,
     teamGoals,
     goalsConceded,
+    imageUrl
   };
 
   const new_squad = squad.concat(player);
@@ -42,7 +43,7 @@ app.post('/squad', (req, res) => {
 
 app.put('/squad/:id', (req, res) => {
   const { id } = req.params;
-  const { name, games, wins, losses, goals, motms, teamGoals, goalsConceded, cardUrl, needWhiteWriting, url } =
+  const { name, games, wins, losses, goals, motms, teamGoals, goalsConceded, cardUrl, needWhiteWriting, imageUrl } =
     req.body;
 
   const old_player = squad.find((player) => player.id == id);
@@ -73,14 +74,10 @@ app.put('/squad/:id', (req, res) => {
     old_player.goals = goals;
   }
 
-  if (url) {
-    old_player.url = url;
+  if (imageUrl) {
+    old_player.imageUrl = imageUrl;
   }
 
-  if (cardUrl) {
-    old_player.cardUrl = cardUrl;
-  }
-    old_player.needWhiteWriting = needWhiteWriting || false
 
 
   fs.writeFile('./mockDB.json', JSON.stringify(squad), (err) =>

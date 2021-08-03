@@ -24,5 +24,19 @@
 .Teams_GameForm {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  border: solid white;
+  width: 30vw;
+  height: 10vh;
+  background-color: #04aa6d;
+  border-radius: 10px;
+  box-shadow: -1rem 0 3rem #000
+
+}
+
+.Teams_GameFormContainer {
+  margin-top: 20vh;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5vh;
+
 }

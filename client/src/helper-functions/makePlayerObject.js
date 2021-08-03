@@ -9,10 +9,7 @@ class MakePlayer {
     motms,
     teamGoals,
     goalsConceded,
-    needWhiteWriting,
-    url,
-    playerImage
-
+    imageUrl
   ) {
     this.id = id;
     this.name = name;
@@ -20,13 +17,10 @@ class MakePlayer {
     this.goals = goals;
     this.wins = wins;
     this.losses = losses;
-    this.draws = this.games - this.wins - this.losses;
     this.motms = motms;
     this.teamGoals = teamGoals;
     this.goalsConceded = goalsConceded;
-    this.needWhiteWriting = needWhiteWriting;
-    this.url = url;
-    this.playerImage = playerImage;
+    this.imageUrl = imageUrl
   }
   goalsPerGame() {
     return Math.round((this.goals / this.games) * 100) / 100;
@@ -45,6 +39,7 @@ class MakePlayer {
   }
 
   teamGoalsPerGame() {
+    console.log(this.teamGoals, this.games);
     return Math.round((this.teamGoals / this.games) * 100) / 100;
   }
 

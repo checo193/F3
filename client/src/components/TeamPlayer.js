@@ -22,7 +22,7 @@ export default function TeamPlayer({ player, updatePlayerStats}) {
           <div className='Player_playerImageContainer'>
             <img
               className='Player_playerImage'
-              src={player.url}
+              src={player.imageUrl}
               alt='player profile pic'
             ></img>
           </div>
