@@ -15,12 +15,14 @@ export default function Squad({ squad, handleClick }) {
   return (
     <>
       <hr></hr>
-      <div className="Squad_titleContainer">
-        <h3 className="Squad_title">Bench</h3>
-      </div>
-      <div className='Squad_squadContainer'>
-        <div className='Squad_squad'>
-          <div className='Squad_squadList'>{displaySquad()}</div>
+      <div className='Squad_container'>
+        <div className='Squad_titleContainer'>
+          <h3 className='Squad_title'>Bench</h3>
+        </div>
+        <div className='Squad_squadContainer'>
+          <div className='Squad_squad'>
+            <div className='Squad_squadList'>{displaySquad()}</div>
+          </div>
         </div>
       </div>
     </>

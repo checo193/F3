@@ -6,7 +6,7 @@ import Teams from './containers/Teams';
 import MakePlayer from './helper-functions/makePlayerObject';
 import PlayingSquad from './containers/PlayingSquad';
 import HomePage from './containers/HomePage';
-import CreateTeams from './components/CreateTeams';
+import CreateTeams from './components/Buttons';
 import playersByRating from './helper-functions/app-functions';
 import LoadingScreen from './components/LoadingScreen';
 
@@ -50,7 +50,6 @@ function App() {
     setOrderedSquad(playersByRating(playingSquad));
     setPlayingSquad([]);
   };
-
 
   // Either adds or removes players to the 'playingSquad' depending on if they are already included or not.
   const handleClick = (player) => {

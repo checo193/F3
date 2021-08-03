@@ -6,22 +6,25 @@ import {
   determineStatClass,
 } from '../helper-functions/player-functions';
 
-export default function TeamPlayer({ player, updatePlayerStats, checkRating }) {
+export default function TeamPlayer({ player, updatePlayerStats}) {
   return (
     <>
       <div className='Player_playerAndForm'>
-        <div
-          onClick={() => {
-            checkRating(player);
-          }}
-          className='Player_playerCard'
-        >
-          <img className='Player_cardImage' src={determineCard(player)} alt='card design'></img>
+        <div className='Player_playerCard'>
+          <img
+            className='Player_cardImage'
+            src={determineCard(player)}
+            alt='card design'
+          ></img>
           <div className={determinePlayerNameClass(player)}>
             <h3>{player.name}</h3>
           </div>
           <div className='Player_playerImageContainer'>
-            <img className='Player_playerImage' src={player.url} alt='player profile pic'></img>
+            <img
+              className='Player_playerImage'
+              src={player.url}
+              alt='player profile pic'
+            ></img>
           </div>
 
           <div className='Player_playerStats'>

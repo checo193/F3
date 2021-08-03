@@ -22,3 +22,23 @@
   margin: 0px;
 }
 
+.Squad_container {
+  height: 53.5vh;
+}
+
+.Squad_addPlayerButton {
+    width: 10vw;
+  height: 2vw;
+  border-radius: 10px;
+  border: none;
+  background-color: #04AA6D;
+  color: white;
+  cursor: pointer;
+}
+
+.Squad_buttonContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center
+}
+

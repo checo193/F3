@@ -1,0 +1,46 @@
+.Buttons_btnContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 5vh;
+  margin-top: 5vh;
+}
+
+.Buttons_createTeamBtn {
+  width: 10vw;
+  height: 2vw;
+  border-radius: 10px;
+  border: none;
+  background-color: #04aa6d;
+  color: white;
+  cursor: pointer;
+  margin-right: 2vw;
+}
+
+.Buttons_createPlayerBtn {
+  width: 10vw;
+  height: 2vw;
+  border-radius: 10px;
+  border: none;
+  background-color: #04aa6d;
+  color: white;
+  cursor: pointer;
+  margin-left: 2vw;
+}
+
+/* background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 10px; */
+
+.Buttons_createTeamBtn:hover {
+  opacity: 0.8;
+}
+
+.Buttons_createPlayerBtn:hover {
+  opacity: 0.8;
+}

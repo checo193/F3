@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import '../CSS_Files/LoadingScreen.css';
 
-
 export default function LoadingScreen() {
   const loadSquad = () => {
     window.location.pathname = '/squad';
@@ -17,10 +16,15 @@ export default function LoadingScreen() {
 
   return (
     <>
-      <div className='LoadingScreen_titleContainer'>
-        <h1 className='LoadingScreen_title'>Gathering Squad...</h1>
+      <hr></hr>
+      <div className='LoadingScreen_container'>
+        <div></div>
+        <div className='LoadingScreen_titleContainer'>
+          <h1 className='LoadingScreen_title'>Generating squad...</h1>
+        </div>
+        <div class='LoadingScreen_football'></div>
       </div>
-      <div class='LoadingScreen_football'></div>
+      <hr></hr>
     </>
   );
 }
