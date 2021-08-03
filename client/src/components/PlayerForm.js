@@ -8,13 +8,14 @@ export default function PlayerForm({ player, updatePlayerStats }) {
   let newGoals = 0;
   function updateGoals(e) {
     const goals = Number(e.target.value);
-    newGoals = player.goals + goals;
+    newGoals = Number(player.goals) + goals;
+    console.log(player.name, newGoals, newGoals+newGoals);
   }
 
   // takes user input and updates 'newMotms' variable, this is then passed to the updatePlayerStats function.
   let newMotms = 0;
   function updateMotm() {
-    newMotms = player.motms + 1;
+    newMotms = Number(player.motms) + 1;
   }
 
   return (

@@ -20,33 +20,33 @@ export default function GameForm({
 
   const handleClick = () => {
     team1.forEach((player) => {
-      updateGameStats(player, player.games + 1);
+      updateGameStats(player, Number(player.games) + 1);
     });
     team2.forEach((player) => {
-      updateGameStats(player, player.games + 1);
+      updateGameStats(player, Number(player.games) + 1);
     });
     if (team1goals > team2goals) {
       team1.forEach((player) => {
-        updatePlayerWins(player, player.wins + 1);
+        updatePlayerWins(player, Number(player.wins) + 1);
       });
       team2.forEach((player) => {
-        updatePlayerLosses(player, player.losses + 1);
+        updatePlayerLosses(player, Number(player.losses) + 1);
       });
     } else if (team1goals < team2goals) {
       team2.forEach((player) => {
-        updatePlayerWins(player, player.wins + 1);
+        updatePlayerWins(player, Number(player.wins) + 1);
       });
       team1.forEach((player) => {
-        updatePlayerLosses(player, player.losses + 1);
+        updatePlayerLosses(player, Number(player.losses) + 1);
       });
     }
     team1.forEach((player) => {
-      updateTeamGoals(player, player.teamGoals + team1goals);
-      updateGoalsConceded(player, player.goalsConceded + team2goals);
+      updateTeamGoals(player, Number(player.teamGoals) + team1goals);
+      updateGoalsConceded(player, Number(player.goalsConceded) + team2goals);
     });
     team2.forEach((player) => {
-      updateTeamGoals(player, player.teamGoals + team2goals);
-      updateGoalsConceded(player, player.goalsConceded + team1goals);
+      updateTeamGoals(player, Number(player.teamGoals) + team2goals);
+      updateGoalsConceded(player, Number(player.goalsConceded) + team1goals);
     });
   };
 
