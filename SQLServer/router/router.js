@@ -1,3 +1,4 @@
+
 const { Player } = require("../models/index");
 
 const router = require("express").Router();
@@ -11,60 +12,31 @@ router.get("/squad", async (req, res) => {
     const squad = await Player.findAll();
     console.log(squad);
     res.send(squad);
-    //     // Find all users
-    // const users = await User.findAll();
-    // console.log(users.every(user => user instanceof User)); // true
-    // console.log("All users:", JSON.stringify(users, null, 2));
   } catch (err) {
     console.log(err);
   }
 });
 
-// create a player
+router.post("/player", async (req, res) => {
+  try {
+    // console.log(req.body);
+    const newPlayer = Player.create(req.body);
+    res.send(newPlayer).status(201);
+  } catch (err) {
+    console.error(err);
+  }
+})
 
-// app.post("/player", async (req, res) => {
-//   try {
-//     const {
-//       name,
-//       games,
-//       wins,
-//       losses,
-//       goals,
-//       motms,
-//       teamGoals,
-//       goalsConceded,
-//       imageUrl,
-//     } = req.body;
-//     const newPlayer = await pool.query(
-//       "INSERT INTO squad (name, games, wins, losses, goals, motms, teamGoals, goalsConceded, imageUrl) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *",
-//       [
-//         name,
-//         games,
-//         wins,
-//         losses,
-//         goals,
-//         motms,
-//         teamGoals,
-//         goalsConceded,
-//         imageUrl,
-//       ]
-//     );
-//     res.json(newPlayer.rows[0]);
-//   } catch (err) {
-//     console.log(err.message);
-//   }
-// });
-
-// //get all players (squad);
-
-// app.get("/squad", async (req, res) => {
-//   try {
-//     const squad = await pool.query("SELECT * FROM squad");
-//     res.json(squad.rows);
-//   } catch (err) {
-//     console.log(err.message);
-//   }
-// });
+router.put("/player/:id", async (req, res) => {
+  try {
+    const playerToUpdate = await Player.findOne({ id: req.params.id });
+    console.log(playerToUpdate, "player to update");
+    // const updatePlayer = await Player.update(req.body, { id: req.params.id });
+    // res.send(updatedPlayer).status(201);
+  } catch (err) {
+    console.error(err);
+  }
+})
 
 // // update a player
 
