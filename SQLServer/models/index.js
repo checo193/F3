@@ -48,7 +48,7 @@ const Player = sequelize.define("player", {
     defaultValue: 0,
   },
   imgUrl: {
-    type: DataTypes.STRING,
+    type: DataTypes.STRING(1234),
     defaultValue: img,
   },
   // squadId: {
