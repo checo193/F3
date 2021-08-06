@@ -1,4 +1,4 @@
-const { Player } = require("../models/index");
+const Player = require("../models/index");
 
 exports.getPlayers = async (req, res) => {
   try {
