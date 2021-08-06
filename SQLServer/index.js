@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const router = require("./router/router");
-const { Player } = require("./models/index");
+const Player = require("./models/index");
 
 const PORT = 3001;
 const app = express();
@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(router);
 
 (async () => {
-  await Player.sequelize.sync({ force: true });
+  await Player.sequelize.sync({ force: false });
   app.listen(PORT, () => {
     console.log(`listening on port ${PORT}`);
   });
