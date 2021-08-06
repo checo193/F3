@@ -1,9 +1,10 @@
 const express = require("express");
-const app = express();
 const cors = require("cors");
-const { Player } = require('./models/index');
+const router = require("./router/router");
+// const { Player } = require('./models/index');
 
 const PORT = 5432;
+const app = express();
 
 // middleware
 app.use(cors());
@@ -11,8 +12,11 @@ app.use(express.json());
 
 // ROUTES
 
-const router = require('./router/router');
 app.use(router);
+
+app.listen(PORT, () => {
+  console.log(`listening on port ${PORT}`);
+});
 
 // app.get("/", async (req, res) => {
 //   res.send("hello app.get");
@@ -146,9 +150,3 @@ app.use(router);
 //   await Player.sequelize.sync({ force: false });
 
 // })();
-
-app.listen(PORT, () => {
-  console.log(`listening on port ${PORT}`);
-});
-
-
