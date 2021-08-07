@@ -26,7 +26,7 @@ export default function Player({ player, handleClick }) {
       <div className="Player_playerImageContainer">
         <img
           className="Player_playerImage"
-          src={player.imageUrl}
+          src={player.imgUrl}
           alt="player profile"
         ></img>
       </div>
