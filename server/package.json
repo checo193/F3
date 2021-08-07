@@ -16,6 +16,7 @@
     "sequelize": "^6.6.5"
   },
   "devDependencies": {
+    "flush-promises": "^1.0.2",
     "jest": "^27.0.6",
     "supertest": "^6.1.4"
   }
