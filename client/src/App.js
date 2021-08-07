@@ -60,18 +60,13 @@ function App() {
 
   // Functions to update all the players stats after a game and reflect changes in the database.
 
-  function updatePlayerStats(player, newGoals, newMotms) {
+  const updatePlayerStats = async (player, newGoals, newMotms) => {
     console.log(player.id);
-    fetch(`http://localhost:3001/squad/${player.id}`, {
-      // this should be /player/id
-      method: "PUT",
-      body: JSON.stringify({ goals: newGoals, motms: newMotms }),
-      headers: { "Content-Type": "application/json" },
-    }).then((response) => {
-      return response.json().then((data) => {
-        setSquad(data);
-      });
-    });
+    await axios.put(`http://localhost:3001/player/${player.id}`, { goals: newGoals, motms: newMotms })
+    await axios
+      .get(`http://localhost:3001/squad`)
+      .then((response) => response.data)
+      .then((data) => setSquad(data));
   }
 
   const updatePlayer = async (player, updates) => {
@@ -83,64 +78,6 @@ function App() {
       .then((data) => setSquad(data));
   };
 
-  function updateGameStats(player, newGames) {
-    fetch(`http://localhost:3001/squad/${player.id}`, {
-      method: "PUT",
-      body: JSON.stringify({ games: newGames }),
-      headers: { "Content-Type": "application/json" },
-    }).then((response) => {
-      return response.json().then((data) => {
-        setSquad(data);
-      });
-    });
-  }
-  function updatePlayerWins(player, newWins) {
-    fetch(`http://localhost:3001/squad/${player.id}`, {
-      method: "PUT",
-      body: JSON.stringify({ wins: newWins }),
-      headers: { "Content-Type": "application/json" },
-    }).then((response) => {
-      return response.json().then((data) => {
-        setSquad(data);
-      });
-    });
-  }
-  function updatePlayerLosses(player, newLosses) {
-    fetch(`http://localhost:3001/squad/${player.id}`, {
-      method: "PUT",
-      body: JSON.stringify({ losses: newLosses }),
-      headers: { "Content-Type": "application/json" },
-    }).then((response) => {
-      return response.json().then((data) => {
-        setSquad(data);
-      });
-    });
-  }
-
-  function updateTeamGoals(player, newTeamGoals) {
-    fetch(`http://localhost:3001/squad/${player.id}`, {
-      method: "PUT",
-      body: JSON.stringify({ teamGoals: newTeamGoals }),
-      headers: { "Content-Type": "application/json" },
-    }).then((response) => {
-      return response.json().then((data) => {
-        setSquad(data);
-      });
-    });
-  }
-
-  function updateGoalsConceded(player, newGoalsConceded) {
-    fetch(`http://localhost:3001/squad/${player.id}`, {
-      method: "PUT",
-      body: JSON.stringify({ goalsConceded: newGoalsConceded }),
-      headers: { "Content-Type": "application/json" },
-    }).then((response) => {
-      return response.json().then((data) => {
-        setSquad(data);
-      });
-    });
-  }
-
   return (
     <div className="App">
       <Router>
@@ -151,13 +88,8 @@ function App() {
           <Route path="/teams">
             <Teams
               updatePlayer={updatePlayer}
-              updatePlayerWins={updatePlayerWins}
-              updateGameStats={updateGameStats}
               updatePlayerStats={updatePlayerStats}
               squad={orderedSquad}
-              updatePlayerLosses={updatePlayerLosses}
-              updateTeamGoals={updateTeamGoals}
-              updateGoalsConceded={updateGoalsConceded}
             />
           </Route>
           <Route path="/squad">

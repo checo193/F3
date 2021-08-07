@@ -7,11 +7,6 @@ export default function Teams({
   updatePlayer,
   squad,
   updatePlayerStats,
-  updateGameStats,
-  updatePlayerWins,
-  updatePlayerLosses,
-  updateTeamGoals,
-  updateGoalsConceded,
 }) {
   const [team1, setTeam1] = useState([]);
   const [team2, setTeam2] = useState([]);
@@ -85,11 +80,6 @@ export default function Teams({
             team1={team1}
             team2={team2}
             updatePlayer={updatePlayer}
-            updateGameStats={updateGameStats}
-            updatePlayerWins={updatePlayerWins}
-            updatePlayerLosses={updatePlayerLosses}
-            updateTeamGoals={updateTeamGoals}
-            updateGoalsConceded={updateGoalsConceded}
           />
         </div>
       </div>
