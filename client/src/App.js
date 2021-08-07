@@ -3,43 +3,26 @@ import Header from "./components/Header";
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Teams from "./containers/Teams";
-import MakePlayer from "./helper-functions/makePlayerObject";
 import PlayingSquad from "./containers/PlayingSquad";
 import HomePage from "./containers/HomePage";
 import CreateTeams from "./components/Buttons";
 import playersByRating from "./helper-functions/app-functions";
 import LoadingScreen from "./components/LoadingScreen";
+import axios from "axios";
 
 function App() {
-  const [squad, setSquad] = useState([]);
-  const [orderedSquad, setOrderedSquad] = useState([]);
-  const [playingSquad, setPlayingSquad] = useState([]);
-
   const url = window.location.pathname.split("/").pop();
 
+  const [squad, setSquad] = useState([]);
+  const [playingSquad, setPlayingSquad] = useState([]);
+  const [orderedSquad, setOrderedSquad] = useState([]);
+
   useEffect(() => {
-    fetch("http://localhost:3001/squad").then((response) => {
-      return response.json().then((data) => {
-        setSquad(
-          data.map((player) => {
-            return new MakePlayer(
-              player.id,
-              player.name,
-              player.games,
-              player.wins,
-              player.losses,
-              player.goals,
-              player.motms,
-              player.teamGoals,
-              player.goalsConceded,
-              player.imageUrl
-            );
-          })
-        );
-      });
-    });
+    axios
+      .get("http://localhost:3001/squad")
+      .then((res) => res.data)
+      .then((data) => setSquad(data));
     setPlayingSquad([]);
-    // updatePlayerCard();
   }, [url]);
 
   // When user clicks 'create teams' button, arranged the selected squad in order of skill rating.
@@ -153,7 +136,7 @@ function App() {
     <div className="App">
       <Router>
         <div>
-          <Header orderSquad={orderSquad} />
+          <Header />
         </div>
         <Switch>
           <Route path="/teams">
