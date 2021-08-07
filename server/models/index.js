@@ -1,6 +1,8 @@
 const { Sequelize, DataTypes } = require("sequelize");
 
-const DB_NAME = "F3DB";
+const isTesting = true;
+
+const DB_NAME = isTesting ? "testF3DB" : "F3DB";
 const DB_USER = "testuser";
 
 const config = {
@@ -52,13 +54,17 @@ const Player = sequelize.define("player", {
   },
 });
 
-(async () => {
-  try {
-    await sequelize.authenticate();
-    console.log("Connection to DB has been established successfully.");
-  } catch (error) {
-    console.error("Unable to connect to the database:", error);
-  }
-})();
+// (async () => {
+//   try {
+//     await sequelize.authenticate();
+//     console.log(
+//       `Connection to ${
+//         isTesting ? "test" : ""
+//       } DB has been established successfully.`
+//     );
+//   } catch (error) {
+//     console.error("Unable to connect to the database:", error);
+//   }
+// })();
 
 module.exports = Player;
