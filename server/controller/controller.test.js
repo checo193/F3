@@ -23,6 +23,6 @@ describe("Integration test", () => {
     const name = "sarah";
     await request.post("/player").send({ name });
     const player = await Player.findOne({ where: { name } });
-    await expect(player.dataValues.name).toBe(name);
+    expect(player.dataValues.name).toBe(name);
   });
 });
