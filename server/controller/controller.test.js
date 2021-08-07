@@ -12,20 +12,14 @@ describe("Integration test", () => {
   const request = supertest(app);
 
   beforeAll(async () => {
-    jest.setTimeout(100000);
     await Player.sequelize.sync({ force: true });
   });
-  //   afterEach(async () => {
-  //     await Player.destroy({ where: {} });
-  //   });
 
-  it("should save player to db", async (done) => {
+
+  it("should save player to db", async () => {
     const name = "sarah";
     await request.post("/player").send({ name });
     const player = await Player.findOne({ where: { name } });
-    // console.log(player.dataValues.name, "PLAYERRRRRRRRRRR");
     expect(player.dataValues.name).toBe(name);
-    // console.log("bwo[ewbfewofbewqewu[fbewfuewbfwe[b");
-    done();
   });
 });
