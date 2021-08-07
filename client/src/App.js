@@ -1,45 +1,28 @@
-import Squad from './containers/Squad';
-import Header from './components/Header';
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Teams from './containers/Teams';
-import MakePlayer from './helper-functions/makePlayerObject';
-import PlayingSquad from './containers/PlayingSquad';
-import HomePage from './containers/HomePage';
-import CreateTeams from './components/Buttons';
-import playersByRating from './helper-functions/app-functions';
-import LoadingScreen from './components/LoadingScreen';
+import Squad from "./containers/Squad";
+import Header from "./components/Header";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Teams from "./containers/Teams";
+import PlayingSquad from "./containers/PlayingSquad";
+import HomePage from "./containers/HomePage";
+import CreateTeams from "./components/Buttons";
+import playersByRating from "./helper-functions/app-functions";
+import LoadingScreen from "./components/LoadingScreen";
+import axios from "axios";
 
 function App() {
-  const [squad, setSquad] = useState([]);
-  const [orderedSquad, setOrderedSquad] = useState([]);
-  const [playingSquad, setPlayingSquad] = useState([]);
+  const url = window.location.pathname.split("/").pop();
 
-  const url = window.location.pathname.split('/').pop();
+  const [squad, setSquad] = useState([]);
+  const [playingSquad, setPlayingSquad] = useState([]);
+  const [orderedSquad, setOrderedSquad] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/squad').then((response) => {
-      return response.json().then((data) => {
-        setSquad(
-          data.map((player) => {
-            return new MakePlayer(
-              player.id,
-              player.name,
-              player.games,
-              player.wins,
-              player.losses,
-              player.goals,
-              player.motms,
-              player.teamGoals,
-              player.goalsConceded,
-              player.imageUrl
-            );
-          })
-        );
-      });
-    });
+    axios
+      .get("http://localhost:3001/squad")
+      .then((res) => res.data)
+      .then((data) => setSquad(data));
     setPlayingSquad([]);
-    // updatePlayerCard();
   }, [url]);
 
   // When user clicks 'create teams' button, arranged the selected squad in order of skill rating.
@@ -79,10 +62,11 @@ function App() {
 
   function updatePlayerStats(player, newGoals, newMotms) {
     console.log(player.id);
-    fetch(`http://localhost:3000/squad/${player.id}`, {
-      method: 'PUT',
+    fetch(`http://localhost:3001/squad/${player.id}`, {
+      // this should be /player/id
+      method: "PUT",
       body: JSON.stringify({ goals: newGoals, motms: newMotms }),
-      headers: { 'Content-Type': 'application/json' },
+      headers: { "Content-Type": "application/json" },
     }).then((response) => {
       return response.json().then((data) => {
         setSquad(data);
@@ -91,10 +75,10 @@ function App() {
   }
 
   function updateGameStats(player, newGames) {
-    fetch(`http://localhost:3000/squad/${player.id}`, {
-      method: 'PUT',
+    fetch(`http://localhost:3001/squad/${player.id}`, {
+      method: "PUT",
       body: JSON.stringify({ games: newGames }),
-      headers: { 'Content-Type': 'application/json' },
+      headers: { "Content-Type": "application/json" },
     }).then((response) => {
       return response.json().then((data) => {
         setSquad(data);
@@ -102,10 +86,10 @@ function App() {
     });
   }
   function updatePlayerWins(player, newWins) {
-    fetch(`http://localhost:3000/squad/${player.id}`, {
-      method: 'PUT',
+    fetch(`http://localhost:3001/squad/${player.id}`, {
+      method: "PUT",
       body: JSON.stringify({ wins: newWins }),
-      headers: { 'Content-Type': 'application/json' },
+      headers: { "Content-Type": "application/json" },
     }).then((response) => {
       return response.json().then((data) => {
         setSquad(data);
@@ -113,10 +97,10 @@ function App() {
     });
   }
   function updatePlayerLosses(player, newLosses) {
-    fetch(`http://localhost:3000/squad/${player.id}`, {
-      method: 'PUT',
+    fetch(`http://localhost:3001/squad/${player.id}`, {
+      method: "PUT",
       body: JSON.stringify({ losses: newLosses }),
-      headers: { 'Content-Type': 'application/json' },
+      headers: { "Content-Type": "application/json" },
     }).then((response) => {
       return response.json().then((data) => {
         setSquad(data);
@@ -125,10 +109,10 @@ function App() {
   }
 
   function updateTeamGoals(player, newTeamGoals) {
-    fetch(`http://localhost:3000/squad/${player.id}`, {
-      method: 'PUT',
+    fetch(`http://localhost:3001/squad/${player.id}`, {
+      method: "PUT",
       body: JSON.stringify({ teamGoals: newTeamGoals }),
-      headers: { 'Content-Type': 'application/json' },
+      headers: { "Content-Type": "application/json" },
     }).then((response) => {
       return response.json().then((data) => {
         setSquad(data);
@@ -137,10 +121,10 @@ function App() {
   }
 
   function updateGoalsConceded(player, newGoalsConceded) {
-    fetch(`http://localhost:3000/squad/${player.id}`, {
-      method: 'PUT',
+    fetch(`http://localhost:3001/squad/${player.id}`, {
+      method: "PUT",
       body: JSON.stringify({ goalsConceded: newGoalsConceded }),
-      headers: { 'Content-Type': 'application/json' },
+      headers: { "Content-Type": "application/json" },
     }).then((response) => {
       return response.json().then((data) => {
         setSquad(data);
@@ -149,13 +133,13 @@ function App() {
   }
 
   return (
-    <div className='App'>
+    <div className="App">
       <Router>
         <div>
-          <Header orderSquad={orderSquad} />
+          <Header />
         </div>
         <Switch>
-          <Route path='/teams'>
+          <Route path="/teams">
             <Teams
               updatePlayerWins={updatePlayerWins}
               updateGameStats={updateGameStats}
@@ -166,15 +150,15 @@ function App() {
               updateGoalsConceded={updateGoalsConceded}
             />
           </Route>
-          <Route path='/squad'>
+          <Route path="/squad">
             <Squad squad={squad} handleClick={handleClick} />
             <PlayingSquad squad={playingSquad} handleClick={handleClick} />
             <CreateTeams orderSquad={orderSquad} />
           </Route>
-          <Route path='/loading'>
+          <Route path="/loading">
             <LoadingScreen />
           </Route>
-          <Route path='/'>
+          <Route path="/">
             <HomePage orderSquad={orderSquad} />
           </Route>
         </Switch>
