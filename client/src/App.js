@@ -74,6 +74,12 @@ function App() {
     });
   }
 
+  const updatePlayer = (player) => {
+    const { id } = player;
+    // axios.put(`http://localhost:3001/player/${id}` {})
+    console.log(id);
+  }
+
   function updateGameStats(player, newGames) {
     fetch(`http://localhost:3001/squad/${player.id}`, {
       method: "PUT",
@@ -141,6 +147,7 @@ function App() {
         <Switch>
           <Route path="/teams">
             <Teams
+              updatePlayer={updatePlayer}
               updatePlayerWins={updatePlayerWins}
               updateGameStats={updateGameStats}
               updatePlayerStats={updatePlayerStats}

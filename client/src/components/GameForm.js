@@ -5,6 +5,7 @@ import '../CSS_Files/GameForm.css'
 //form to update goalsConceded, teamGoals, game, wins, losses.
 
 export default function GameForm({
+  updatePlayer,
   team1,
   team2,
   updateGameStats,
@@ -19,6 +20,13 @@ export default function GameForm({
   // below is where the 'updateStat' functions are called for the required players when 'submit Game' button is clicked.
 
   const handleClick = () => {
+
+    team1.forEach((player) => {
+      updatePlayer(player);
+    })
+
+
+
     team1.forEach((player) => {
       updateGameStats(player, Number(player.games) + 1);
     });
