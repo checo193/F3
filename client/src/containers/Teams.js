@@ -4,6 +4,7 @@ import GameForm from '../components/GameForm';
 import '../CSS_Files/Teams.css';
 
 export default function Teams({
+  updatePlayer,
   squad,
   updatePlayerStats,
   updateGameStats,
@@ -83,6 +84,7 @@ export default function Teams({
           <GameForm
             team1={team1}
             team2={team2}
+            updatePlayer={updatePlayer}
             updateGameStats={updateGameStats}
             updatePlayerWins={updatePlayerWins}
             updatePlayerLosses={updatePlayerLosses}
