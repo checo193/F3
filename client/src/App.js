@@ -74,11 +74,14 @@ function App() {
     });
   }
 
-  const updatePlayer = (player) => {
+  const updatePlayer = async (player, updates) => {
     const { id } = player;
-    // axios.put(`http://localhost:3001/player/${id}` {})
-    console.log(id);
-  }
+    await axios.put(`http://localhost:3001/player/${id}`, updates);
+    axios
+      .get("http://localhost:3001/squad")
+      .then((res) => res.data)
+      .then((data) => setSquad(data));
+  };
 
   function updateGameStats(player, newGames) {
     fetch(`http://localhost:3001/squad/${player.id}`, {
