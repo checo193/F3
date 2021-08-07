@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "dev:seed": "node ./scripts/seed.js"
   },
   "author": "",
@@ -14,5 +14,9 @@
     "express": "^4.17.1",
     "pg": "^8.7.1",
     "sequelize": "^6.6.5"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6",
+    "supertest": "^6.1.4"
   }
 }

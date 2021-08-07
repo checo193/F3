@@ -61,13 +61,15 @@ function App() {
   // Functions to update all the players stats after a game and reflect changes in the database.
 
   const updatePlayerStats = async (player, newGoals, newMotms) => {
-    console.log(player.id);
-    await axios.put(`http://localhost:3001/player/${player.id}`, { goals: newGoals, motms: newMotms })
+    await axios.put(`http://localhost:3001/player/${player.id}`, {
+      goals: newGoals,
+      motms: newMotms,
+    });
     await axios
       .get(`http://localhost:3001/squad`)
       .then((response) => response.data)
       .then((data) => setSquad(data));
-  }
+  };
 
   const updatePlayer = async (player, updates) => {
     const { id } = player;
