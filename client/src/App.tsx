@@ -13,9 +13,9 @@ import axios from "axios";
 function App() {
   const url = window.location.pathname.split("/").pop();
 
-  const [squad, setSquad] = useState([]);
-  const [playingSquad, setPlayingSquad] = useState([]);
-  const [orderedSquad, setOrderedSquad] = useState([]);
+  const [squad, setSquad] = useState<any>([]);
+  const [playingSquad, setPlayingSquad] = useState<any>([]);
+  const [orderedSquad, setOrderedSquad] = useState<any>([]);
 
   useEffect(() => {
     axios
@@ -32,10 +32,10 @@ function App() {
   };
 
   // Either adds or removes players to the 'playingSquad' depending on if they are already included or not.
-  const handleClick = (player) => {
+  const handleClick = (player: Player) => {
     console.log(player.imageUrl);
     let inList = false;
-    let index = 0;
+    let index: number = 0;
 
     for (let member of playingSquad) {
       if (member.id === player.id) {
@@ -44,8 +44,8 @@ function App() {
       }
     }
     if (inList === false) {
-      setPlayingSquad((prevState) => [...prevState, player]);
-      const tempSquad = squad;
+      setPlayingSquad((prevState: Player[]) => [...prevState, player]);
+      let tempSquad = squad.slice();
       index = squad.indexOf(player);
       tempSquad.splice(index, 1);
       setSquad(tempSquad);
@@ -54,13 +54,13 @@ function App() {
       const arr = [...playingSquad];
       arr.splice(index, 1);
       setPlayingSquad(arr);
-      setSquad((prevState) => [...prevState, player]);
+      setSquad((prevState: Player[]) => [...prevState, player]);
     }
   };
 
   // Functions to update all the players stats after a game and reflect changes in the database.
 
-  const updatePlayerStats = async (player, newGoals, newMotms) => {
+  const updatePlayerStats = async (player: Player, newGoals: number, newMotms: number) => {
     await axios.put(`http://localhost:3001/player/${player.id}`, {
       goals: newGoals,
       motms: newMotms,
@@ -71,7 +71,12 @@ function App() {
       .then((data) => setSquad(data));
   };
 
-  const updatePlayer = async (player, updates) => {
+  interface Player {
+    name: String;
+    [key: string]: any;
+  }
+
+  const updatePlayer = async (player: Player, updates: { [key: string]: any; }): Promise<void> => {
     const { id } = player;
     await axios.put(`http://localhost:3001/player/${id}`, updates);
     axios

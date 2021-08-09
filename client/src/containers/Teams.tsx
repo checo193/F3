@@ -3,13 +3,19 @@ import TeamPlayer from '../components/TeamPlayer';
 import GameForm from '../components/GameForm';
 import '../CSS_Files/Teams.css';
 
+interface TeamsProps {
+  updatePlayer: any;
+  squad: any[];
+  updatePlayerStats: any;
+}
+
 export default function Teams({
   updatePlayer,
   squad,
   updatePlayerStats,
-}) {
-  const [team1, setTeam1] = useState([]);
-  const [team2, setTeam2] = useState([]);
+}: TeamsProps) {
+  const [team1, setTeam1] = useState<any>([]);
+  const [team2, setTeam2] = useState<any>([]);
   // const [orderedSquad, setOrderedSquad] = useState([]);
   /* 
   const initialState = {
@@ -20,9 +26,9 @@ export default function Teams({
   */
 
   // Function to create teams, loops through squad sorted by rating, adds first player to team 1, next to team 2, next to team 1 etc...
-  const createTeams = (squad) => {
-    const tempTeam1 = [];
-    const tempTeam2 = [];
+  const createTeams = (squad: any[]) => {
+    const tempTeam1: any[] = [];
+    const tempTeam2: any[] = [];
     // const tempTeams = { team1: [], team2: []}
     for (let i = 0; i < squad.length; i++) {
       if (i % 2 === 0) {
@@ -33,14 +39,14 @@ export default function Teams({
         //tempTeams.team2.push(squad[i]);
       }
     }
-    setTeam1((prevState) => [...prevState, ...tempTeam1]);
-    setTeam2((prevState) => [...prevState, ...tempTeam2]);
+    setTeam1((prevState: any[]) => [...prevState, ...tempTeam1]);
+    setTeam2((prevState: any[]) => [...prevState, ...tempTeam2]);
     // setTeams( prevState => { ...prevState, ...tempTeams})
     // setTeams( {...tempTeams})
   };
 
   // function to display teams, maps through a team and returns a Player component for each player.
-  const displayTeam = (team) => {
+  const displayTeam = (team: any[]) => {
     return team.map((player) => {
       return (
         <TeamPlayer
