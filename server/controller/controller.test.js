@@ -15,9 +15,6 @@ describe("Integration test", () => {
   beforeAll(async () => {
     await Player.sequelize.sync({ force: true });
   });
-  // afterEach(async () => {
-  //   await Player.destroy({ where: {} });
-  // });
 
   it("should save player to db", async () => {
     const name = "sarah";
