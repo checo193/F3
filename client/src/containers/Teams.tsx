@@ -14,8 +14,8 @@ export default function Teams({
   squad,
   updatePlayerStats,
 }: TeamsProps) {
-  const [team1, setTeam1] = useState<any>([]);
-  const [team2, setTeam2] = useState<any>([]);
+  const [team1, setTeam1] = useState<typeof Teams[]>([]);
+  const [team2, setTeam2] = useState<typeof Teams[]>([]);
   // const [orderedSquad, setOrderedSquad] = useState([]);
   /* 
   const initialState = {
@@ -27,8 +27,8 @@ export default function Teams({
 
   // Function to create teams, loops through squad sorted by rating, adds first player to team 1, next to team 2, next to team 1 etc...
   const createTeams = (squad: any[]) => {
-    const tempTeam1: any[] = [];
-    const tempTeam2: any[] = [];
+    const tempTeam1: typeof Teams[] = [];
+    const tempTeam2: typeof Teams[] = [];
     // const tempTeams = { team1: [], team2: []}
     for (let i = 0; i < squad.length; i++) {
       if (i % 2 === 0) {
@@ -39,8 +39,8 @@ export default function Teams({
         //tempTeams.team2.push(squad[i]);
       }
     }
-    setTeam1((prevState: any[]) => [...prevState, ...tempTeam1]);
-    setTeam2((prevState: any[]) => [...prevState, ...tempTeam2]);
+    setTeam1((prevState: typeof Teams[]) => [...prevState, ...tempTeam1]);
+    setTeam2((prevState: typeof Teams[]) => [...prevState, ...tempTeam2]);
     // setTeams( prevState => { ...prevState, ...tempTeams})
     // setTeams( {...tempTeams})
   };

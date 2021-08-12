@@ -13,9 +13,9 @@ import axios from "axios";
 function App() {
   const url = window.location.pathname.split("/").pop();
 
-  const [squad, setSquad] = useState<any>([]);
-  const [playingSquad, setPlayingSquad] = useState<any>([]);
-  const [orderedSquad, setOrderedSquad] = useState<any>([]);
+  const [squad, setSquad] = useState<Player[]>([]);
+  const [playingSquad, setPlayingSquad] = useState<Player[]>([]);
+  const [orderedSquad, setOrderedSquad] = useState<Player[]>([]);
 
   useEffect(() => {
     axios
